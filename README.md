@@ -1,26 +1,60 @@
 # Portfolio — Hamza Marzaq
 
-Portfolio personnel premium réalisé en HTML, CSS et JavaScript.
+Portfolio personnel de **Hamza Marzaq**, étudiant en Licence 3 Informatique et candidat à une alternance à partir de **juin 2026**.
 
-## Modifications v2
+Ce site présente mon profil, mes compétences techniques, mon expérience, mes projets GitHub et mes certifications.
 
-- Alternance disponible à partir de juin 2026
-- Ajout du tutorat académique
-- Ajout de la section certifications Coursera
-- Mise à jour du contenu pour un profil fullstack / cybersécurité
+## Objectif du portfolio
 
-## Lancer en local
+Présenter de manière claire et professionnelle mon parcours en développement logiciel, développement web et cybersécurité.
 
-Double-cliquer sur `index.html` ou ouvrir avec Live Server dans VS Code.
+## Contenu du site
 
-## Déployer sur GitHub Pages
+- Présentation personnelle
+- Expérience professionnelle
+- Tutorat académique en informatique
+- Projets techniques :
+  - AgriConnect
+  - TaskFlow
+- Compétences techniques
+- Certifications Coursera
+- Informations de contact
 
-1. Créer un repository `portfolio`
-2. Envoyer `index.html`, `style.css`, `script.js`, `README.md`
-3. Aller dans `Settings > Pages`
-4. Source : `Deploy from branch`
-5. Branch : `main`, folder : `/root`
+## Technologies utilisées
+
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub Pages
+
+## Projets présentés
+
+### AgriConnect
+
+Application web Django de recommandation agricole utilisant un modèle de Machine Learning.
+
+Lien GitHub :  
+https://github.com/Hamza-dev-max/agriconnect
+
+### TaskFlow
+
+Application fullstack de gestion de tâches avec frontend Angular et backend Java Spring Boot.
+
+Lien GitHub :  
+https://github.com/Hamza-dev-max/taskflow
+
+## Portfolio en ligne
+
+https://hamza-dev-max.github.io/portfolio/
+
+## Contact
+
+- Email : marzaqhamza1@gmail.com
+- Téléphone : 07 62 46 06 40
+- LinkedIn : https://www.linkedin.com/in/hamza-marzaq
+- GitHub : https://github.com/Hamza-dev-max
 
 ## Auteur
 
-Hamza Marzaq
+**Hamza Marzaq**
