@@ -5,255 +5,1242 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Hamza Marzaq — Développeur Full Stack</title>
-  <meta name="description" content="Portfolio de Hamza Marzaq — Développeur Full Stack orienté développement web, API REST, Machine Learning et cybersécurité. Disponible en alternance dès septembre 2026." />
+  <meta name="description" content="Développeur Full Stack passionné — React, Node.js, Spring Boot, Python ML. Disponible en alternance dès juin 2026." />
   <meta name="author" content="Hamza Marzaq" />
 
-  <link rel="stylesheet" href="style.css" />
+  <meta property="og:title" content="Hamza Marzaq — Développeur Full Stack" />
+  <meta property="og:description" content="Développeur Full Stack passionné — React, Node.js, Spring Boot, Python ML. Disponible en alternance dès juin 2026." />
+  <meta property="og:image" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
+  <meta property="og:url" content="https://hamza-dev-max.github.io/portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0f1e;
+      --bg2: #0d1428;
+      --surface: rgba(255,255,255,0.055);
+      --surface-hover: rgba(255,255,255,0.085);
+      --border: rgba(255,255,255,0.1);
+      --border-accent: rgba(99,202,183,0.35);
+      --text: #eef2f9;
+      --muted: #8a9ab8;
+      --muted2: #b0bfd6;
+      --accent: #63cab7;
+      --accent2: #4db8c8;
+      --blue: #6ba3f0;
+      --purple: #a88ef0;
+      --gold: #f0c060;
+      --glow: 0 0 40px rgba(99,202,183,0.18);
+      --shadow-card: 0 24px 64px rgba(0,0,0,0.45);
+      --radius: 24px;
+      --radius-sm: 14px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 0%, rgba(99,202,183,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 45% at 90% 10%, rgba(107,163,240,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 40% at 50% 90%, rgba(168,142,240,0.09) 0%, transparent 55%),
+        linear-gradient(175deg, #0a0f1e 0%, #080d1a 50%, #0a0f1e 100%);
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 80%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .navbar {
+      position: sticky; top: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1240px; margin: 0 auto;
+      padding: 16px 28px;
+      backdrop-filter: blur(24px) saturate(1.4);
+    }
+
+    .brand { display: flex; align-items: center; gap: 11px; }
+
+    .brand-icon {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      color: #06111a;
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 400;
+      box-shadow: 0 8px 28px rgba(99,202,183,0.22);
+    }
+
+    .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+    .brand-role { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px;
+      padding: 7px; border: 1px solid var(--border);
+      background: rgba(10,15,30,0.7);
+      border-radius: 999px;
+    }
+
+    .nav-links a {
+      color: var(--muted); font-size: 13px; font-weight: 500;
+      padding: 8px 14px; border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); background: var(--surface-hover); }
+
+    .nav-cta { display: flex; align-items: center; gap: 8px; }
+
+    .badge-available {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: 999px;
+      border: 1px solid rgba(99,202,183,0.3);
+      background: rgba(99,202,183,0.08);
+      font-size: 12px; font-weight: 600; color: var(--accent);
+    }
+
+    .badge-available::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .menu-btn {
+      display: none; cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 12px; padding: 9px 12px;
+      font-size: 20px;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      align-items: center;
+      gap: 48px;
+      padding: 80px 0 100px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 24px;
+      padding: 9px 16px;
+      border: 1px solid rgba(99,202,183,0.28);
+      background: rgba(99,202,183,0.07);
+      color: #a8f0e4; border-radius: 999px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    .hero-eyebrow span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 6px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7.5vw, 96px);
+      line-height: 0.94;
+      letter-spacing: -0.025em;
+      font-weight: 400;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(130deg, #ffffff 20%, var(--accent) 55%, var(--blue) 90%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    .hero-desc {
+      margin-top: 28px; max-width: 700px;
+      color: var(--muted2); font-size: 18px; line-height: 1.75; font-weight: 300;
+    }
+
+    .hero-value {
+      margin-top: 20px; padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(99,202,183,0.06);
+      border-radius: 0 14px 14px 0;
+      font-size: 15px; color: var(--muted2); line-height: 1.7;
+    }
+
+    .hero-value strong { color: var(--text); font-weight: 600; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; min-height: 48px; padding: 13px 22px;
+      border-radius: var(--radius-sm); font-weight: 600;
+      font-family: var(--font-body); font-size: 14px;
+      cursor: pointer; border: none;
+      transition: all 0.22s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #04111a;
+      box-shadow: 0 12px 36px rgba(99,202,183,0.22);
+    }
+
+    .btn-primary:hover { box-shadow: 0 18px 48px rgba(99,202,183,0.35); }
+
+    .btn-outline {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.2); }
+
+    .btn-ghost {
+      background: transparent; color: var(--accent);
+      border: 1px solid var(--border-accent);
+    }
+
+    .btn-ghost:hover { background: rgba(99,202,183,0.08); }
+
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 40px;
+    }
+
+    .stat-item {
+      padding: 18px 16px; border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-item strong {
+      display: block; font-size: 22px; font-weight: 700;
+      color: var(--text); margin-bottom: 4px;
+      font-family: var(--font-display);
+    }
+
+    .stat-item span { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .hero-card {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(24px);
+      border-radius: 28px; padding: 28px;
+      box-shadow: var(--shadow-card);
+      position: relative; overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: ''; position: absolute;
+      width: 220px; height: 220px;
+      top: -80px; right: -60px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,202,183,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 2px solid rgba(255,255,255,0.22);
+      box-shadow: 0 12px 32px rgba(99,202,183,0.2);
+    }
+
+    .card-name { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; }
+    .card-role { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+
+    .info-rows { display: grid; gap: 8px; margin-bottom: 20px; }
+
+    .info-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 14px; border-radius: 12px;
+      background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .info-row-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .info-row-value { font-size: 13px; font-weight: 500; }
+    .info-row-value.accent { color: var(--accent); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .tag {
+      padding: 6px 11px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      font-size: 12px; font-weight: 500; color: var(--muted2);
+    }
+
+    .section { padding: 88px 0; }
+
+    .section-header { margin-bottom: 48px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: ''; width: 20px; height: 2px;
+      background: var(--accent); border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 400; line-height: 1.06;
+      letter-spacing: -0.025em;
+    }
+
+    .section-title em { font-style: italic; color: var(--muted); }
+
+    .section-subtitle { margin-top: 12px; color: var(--muted2); font-size: 17px; line-height: 1.7; font-weight: 300; }
+
+    .glass {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .profile-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
+
+    .profile-main { border-radius: var(--radius); padding: 36px; }
+
+    .profile-main h3 {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 400;
+      margin-bottom: 16px; letter-spacing: -0.02em;
+    }
+
+    .profile-main p { color: var(--muted2); line-height: 1.8; font-size: 16px; margin-bottom: 14px; }
+
+    .profile-main p:last-child { margin-bottom: 0; }
+
+    .profile-side { display: grid; gap: 20px; }
+
+    .mini-card {
+      border-radius: var(--radius); padding: 26px;
+      position: relative; overflow: hidden;
+    }
+
+    .mini-card-num {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 400;
+      color: rgba(99,202,183,0.18);
+      position: absolute; top: 12px; right: 18px;
+      line-height: 1;
+    }
+
+    .mini-card h4 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .mini-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    .timeline { display: grid; gap: 0; }
+
+    .timeline-item { display: grid; grid-template-columns: 28px 1fr; gap: 20px; }
+
+    .timeline-left { display: flex; flex-direction: column; align-items: center; }
+
+    .timeline-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(99,202,183,0.15);
+      flex-shrink: 0; margin-top: 6px;
+    }
+
+    .timeline-line {
+      flex: 1; width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      margin-top: 8px; margin-bottom: -4px;
+      min-height: 40px;
+    }
+
+    .timeline-card { border-radius: var(--radius); padding: 26px; margin-bottom: 16px; }
+
+    .timeline-date {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px;
+    }
+
+    .timeline-card h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .timeline-card p { color: var(--muted2); font-size: 14px; line-height: 1.7; }
+
+    .exp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    .exp-card { border-radius: var(--radius); padding: 30px; }
+
+    .exp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+
+    .exp-badge {
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .exp-badge.stage { background: rgba(99,202,183,0.15); color: var(--accent); border: 1px solid rgba(99,202,183,0.25); }
+    .exp-badge.tutorat { background: rgba(107,163,240,0.12); color: var(--blue); border: 1px solid rgba(107,163,240,0.22); }
+
+    .exp-date { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+    .exp-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 10px; }
+
+    .exp-card p { color: var(--muted2); font-size: 14px; line-height: 1.72; }
+
+    .exp-card ul { margin-top: 16px; padding-left: 0; list-style: none; display: grid; gap: 8px; }
+
+    .exp-card ul li { display: flex; align-items: baseline; gap: 10px; font-size: 14px; color: var(--muted2); line-height: 1.6; }
+
+    .exp-card ul li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 12px; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    .project-card {
+      border-radius: 28px; padding: 30px;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(0,0,0,0.55); }
+
+    .project-card.featured {
+      background:
+        linear-gradient(135deg, rgba(99,202,183,0.1), rgba(107,163,240,0.06)),
+        var(--surface);
+      border-color: rgba(99,202,183,0.2);
+    }
+
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+
+    .project-num { font-family: var(--font-display); font-size: 46px; color: rgba(255,255,255,0.12); line-height: 1; font-weight: 400; }
+
+    .project-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); text-align: right; line-height: 1.6; }
+
+    .project-card h3 { font-family: var(--font-display); font-size: 30px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 12px; }
+
+    .project-card p { color: var(--muted2); font-size: 14px; line-height: 1.75; }
+
+    .project-card ul { margin: 16px 0 0; padding-left: 0; list-style: none; display: grid; gap: 7px; }
+
+    .project-card ul li { display: flex; align-items: baseline; gap: 10px; font-size: 13px; color: var(--muted2); line-height: 1.5; }
+
+    .project-card ul li::before { content: '▸'; color: var(--accent); font-size: 10px; flex-shrink: 0; }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+
+    .tech-tag {
+      padding: 5px 10px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.055);
+      font-size: 11px; font-weight: 600; color: var(--muted2);
+    }
+
+    .project-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: auto; padding-top: 22px;
+      font-size: 13px; font-weight: 700;
+      color: var(--accent);
+      transition: gap 0.2s ease;
+    }
+
+    .project-link:hover { gap: 10px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .skill-card { border-radius: 20px; padding: 22px; transition: transform 0.2s ease, border-color 0.2s ease; }
+
+    .skill-card:hover { transform: translateY(-3px); border-color: rgba(99,202,183,0.3); }
+
+    .skill-icon { font-size: 26px; margin-bottom: 12px; }
+
+    .skill-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+
+    .skill-items { display: flex; flex-direction: column; gap: 4px; }
+
+    .skill-item { font-size: 13px; color: var(--muted2); }
+
+    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .cert-card { border-radius: 20px; padding: 22px; }
+
+    .cert-issuer { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+
+    .cert-card h4 { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.4; }
+
+    .cert-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .langs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+
+    .lang-card { border-radius: 18px; padding: 20px; text-align: center; }
+
+    .lang-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+
+    .lang-level { font-size: 12px; color: var(--muted); }
+
+    .lang-bar { margin-top: 12px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+    .lang-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--blue)); }
+
+    .contact-card {
+      border-radius: 32px; padding: 48px;
+      display: grid; grid-template-columns: 1fr 0.9fr;
+      gap: 48px; align-items: center;
+      background:
+        linear-gradient(135deg, rgba(99,202,183,0.08), rgba(107,163,240,0.05)),
+        var(--surface);
+      border-color: rgba(99,202,183,0.15);
+    }
+
+    .contact-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 400; line-height: 1.08;
+      letter-spacing: -0.025em; margin-bottom: 16px;
+    }
+
+    .contact-card h2 em { font-style: italic; color: var(--accent); }
+
+    .contact-card p { color: var(--muted2); font-size: 16px; line-height: 1.75; }
+
+    .contact-links { display: grid; gap: 10px; }
+
+    .contact-link {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 18px; border-radius: 16px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+      font-size: 14px; font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .contact-link:hover { background: rgba(255,255,255,0.09); border-color: rgba(99,202,183,0.35); transform: translateX(4px); }
+
+    .contact-link-icon { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 16px; background: var(--surface); flex-shrink: 0; }
+
+    .contact-link-info { display: flex; flex-direction: column; gap: 1px; }
+
+    .contact-link-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+
+    .footer { padding: 28px 0 40px; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+
+    .footer a { color: var(--accent); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1060px) {
+      .hero, .profile-grid, .contact-card { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 860px) {
+      .menu-btn { display: block; }
+
+      .nav-links {
+        display: none; position: absolute;
+        top: 68px; left: 16px; right: 16px;
+        flex-direction: column; align-items: stretch;
+        border-radius: 22px; padding: 10px;
+        background: rgba(10,15,30,0.97);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-cta { display: none; }
+
+      .projects-grid, .exp-grid, .langs-grid { grid-template-columns: 1fr; }
+
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+
+      .container { padding: 0 18px; }
+
+      .section { padding: 64px 0; }
+
+      .contact-card { padding: 30px; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .skills-grid, .certs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="header">
-    <nav class="navbar">
-      <a href="#home" class="logo">Hamza Marzaq</a>
+<header style="position:sticky;top:0;z-index:200;backdrop-filter:blur(24px);border-bottom:1px solid var(--border);">
+  <nav class="navbar">
+    <a class="brand" href="#top">
+      <div class="brand-icon">HM</div>
+      <div>
+        <div class="brand-name">Hamza Marzaq</div>
+        <div class="brand-role">Développeur Full Stack</div>
+      </div>
+    </a>
 
-      <ul class="nav-links">
-        <li><a href="#about">Profil</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <div class="nav-links" id="navLinks">
+      <a href="#profil">Profil</a>
+      <a href="#formation">Formation</a>
+      <a href="#experience">Expérience</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-cta">
+      <a class="badge-available" href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download>Télécharger mon CV</a>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero container">
+  <div class="hero-content reveal">
+    <p class="hero-eyebrow"><span></span> Disponible pour une alternance — Juin 2026</p>
+
+    <h1>
+      Développeur<br>
+      Full Stack<br>
+      <em>Web & Cybersécurité</em>
+    </h1>
+
+    <p class="hero-desc">
+      Étudiant en Licence 3 Informatique à l'Université Grenoble Alpes, je conçois
+      des applications web complètes, des API REST robustes et des projets Machine Learning
+      structurés — avec un vrai souci de qualité à chaque étape.
+    </p>
+
+    <div class="hero-value">
+      <strong>Ce que j'apporte :</strong> une double compétence développement Full Stack + bases solides en cybersécurité applicative,
+      une approche orientée résultats, et la capacité à livrer des projets documentés et maintenables.
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projets">Voir mes projets →</a>
+      <a class="btn btn-outline" href="mailto:marzaqhamza1@gmail.com">Me contacter</a>
+      <a class="btn btn-ghost" href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download>Télécharger mon CV</a>
+      <a class="btn btn-ghost" href="https://github.com/Hamza-dev-max" target="_blank">GitHub ↗</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <strong>4+</strong>
+        <span>Projets portfolio documentés</span>
+      </div>
+      <div class="stat-item">
+        <strong>Full Stack</strong>
+        <span>React · Node · Spring Boot</span>
+      </div>
+      <div class="stat-item">
+        <strong>Cyber</strong>
+        <span>OWASP · JWT · API REST</span>
+      </div>
+    </div>
+  </div>
+
+  <aside class="hero-card reveal">
+    <img src="photo_pro_Hamza.jpeg" alt="Photo de Hamza Marzaq" class="profile-photo">
+
+    <div class="card-name">Hamza Marzaq</div>
+    <div class="card-role">Full Stack · Machine Learning · Cybersécurité<br>Alternance — Juin 2026</div>
+
+    <div class="info-rows">
+      <div class="info-row">
+        <span class="info-row-label">Localisation</span>
+        <span class="info-row-value">Grenoble, France</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Recherche</span>
+        <span class="info-row-value accent">Alternance 2026</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Formation</span>
+        <span class="info-row-value">Licence 3 Info — UGA</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Email</span>
+        <span class="info-row-value" style="font-size:12px">marzaqhamza1@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">React</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">Java</span>
+      <span class="tag">Spring Boot</span>
+      <span class="tag">Python</span>
+      <span class="tag">Django</span>
+      <span class="tag">SQL</span>
+      <span class="tag">JWT</span>
+    </div>
+  </aside>
+</section>
+
+<section class="container section" id="profil">
+  <div class="section-header reveal">
+    <p class="eyebrow">Profil</p>
+    <h2 class="section-title">Un développeur technique,<br><em>orienté impact</em></h2>
+  </div>
+
+  <div class="profile-grid">
+    <article class="profile-main glass reveal">
+      <h3>Qui suis-je ?</h3>
+      <p>
+        Je suis étudiant en Licence 3 Informatique à l'Université Grenoble Alpes, passionné par le développement
+        logiciel dans toutes ses dimensions — du frontend à l'API, du Machine Learning à la cybersécurité.
+      </p>
+      <p>
+        Mon objectif est de rejoindre une entreprise en alternance pour contribuer à des projets concrets et continuer
+        à progresser dans un contexte professionnel exigeant. Je cherche une équipe où je peux apporter de la valeur
+        dès le premier jour, tout en apprenant des pratiques du terrain.
+      </p>
+      <p>
+        Chacun de mes projets portfolio est conçu pour être <strong>réaliste, documenté et maintenable</strong> —
+        pas juste un exercice, mais une démonstration de ma façon de travailler.
+      </p>
+
+      <div class="tags" style="margin-top:20px">
+        <span class="tag">Autonome</span>
+        <span class="tag">Rigoureux</span>
+        <span class="tag">Curieux</span>
+        <span class="tag">Orienté qualité</span>
+        <span class="tag">Travail en équipe</span>
+      </div>
+    </article>
+
+    <div class="profile-side">
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">01</div>
+        <h4>🌐 Développement Web Full Stack</h4>
+        <p>Création d'applications complètes : React en frontend, Node.js / Spring Boot en backend, avec authentification et API REST.</p>
+      </article>
+
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">02</div>
+        <h4>🤖 Machine Learning & Data</h4>
+        <p>Pipelines ML avec Scikit-learn, vectorisation NLP, déploiement via Streamlit. Classification et prédiction sur données réelles.</p>
+      </article>
+
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">03</div>
+        <h4>🔐 Cybersécurité applicative</h4>
+        <p>Connaissances OWASP Top 10, bonnes pratiques JWT, sécurité des API REST et sensibilisation à la sécurité web.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section" id="formation">
+  <div class="section-header reveal">
+    <p class="eyebrow">Formation</p>
+    <h2 class="section-title">Parcours académique</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2025 — Présent</div>
+        <h3>Licence 3 Informatique — Université Grenoble Alpes</h3>
+        <p>Programmation avancée, algorithmique, bases de données relationnelles, architecture système, réseaux et développement logiciel appliqué.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2024 — 2025</div>
+        <h3>Cycle Ingénierie Informatique — EMSI Rabat</h3>
+        <p>Développement logiciel orienté objet, projets web concrets, bases de données et conception d'applications.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2022 — 2024</div>
+        <h3>Cycle Préparatoire Informatique — EMSI Rabat</h3>
+        <p>Fondements solides : mathématiques, algorithmique, logique de programmation et résolution de problèmes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header reveal" style="margin-top:52px; margin-bottom:16px;">
+    <p class="eyebrow">Langues</p>
+  </div>
+
+  <div class="langs-grid">
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Français</div>
+      <div class="lang-level">Courant</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div>
+    </div>
+
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Anglais</div>
+      <div class="lang-level">Professionnel</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
+    </div>
+
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Arabe</div>
+      <div class="lang-level">Langue maternelle</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="container section" id="experience">
+  <div class="section-header reveal">
+    <p class="eyebrow">Expérience</p>
+    <h2 class="section-title">Expériences professionnelles</h2>
+  </div>
+
+  <div class="exp-grid">
+    <article class="exp-card glass reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-date">Juillet 2025</div>
+          <h3>Développeur Logiciel — Atlantis</h3>
+        </div>
+        <span class="exp-badge stage">Stage</span>
+      </div>
+
+      <p>Participation au développement backend d'une application d'entreprise. Travail en équipe sur une codebase Java/Spring Boot existante.</p>
+
+      <ul>
+        <li>Développement de nouvelles fonctionnalités backend</li>
+        <li>Identification et correction de bugs</li>
+        <li>Utilisation de Git / GitHub dans un workflow collaboratif</li>
+        <li>Participation aux échanges techniques avec l'équipe</li>
+      </ul>
+    </article>
+
+    <article class="exp-card glass reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-date">2021 — 2022</div>
+          <h3>Tuteur académique — Institut Al Najah</h3>
+        </div>
+        <span class="exp-badge tutorat">Tutorat</span>
+      </div>
+
+      <p>Encadrement d'étudiants en informatique et mathématiques. Développement de compétences pédagogiques et de communication technique.</p>
+
+      <ul>
+        <li>Cours particuliers en JavaScript, C++ et algorithmique</li>
+        <li>Explication de la programmation orientée objet</li>
+        <li>Communication de concepts complexes de façon accessible</li>
+        <li>Suivi individuel et progression des étudiants</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="projets">
+  <div class="section-header reveal">
+    <p class="eyebrow">Projets</p>
+    <h2 class="section-title">Projets principaux</h2>
+    <p class="section-subtitle">Réalistes, documentés, et conçus pour démontrer des compétences concrètes.</p>
+  </div>
+
+  <div class="projects-grid">
+    <article class="project-card glass featured reveal">
+      <div class="project-top">
+        <span class="project-num">01</span>
+        <span class="project-cat">Full Stack · API REST · JWT</span>
+      </div>
+
+      <h3>Telco Connect B2B</h3>
+      <p>Plateforme web simulant l'écosystème digital d'une entreprise télécom B2B : catalogue d'offres, extranet client, gestion de commandes et de tickets support.</p>
+
+      <ul>
+        <li>Authentification JWT avec rôles Admin / Client</li>
+        <li>Catalogue d'offres et création de commandes</li>
+        <li>Gestion de tickets support</li>
+        <li>Simulation d'intégration CRM / ERP</li>
       </ul>
 
-      <a href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download class="btn-cv">
-        Télécharger mon CV
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express</span>
+        <span class="tech-tag">JWT</span>
+        <span class="tech-tag">REST API</span>
+        <span class="tech-tag">CSS</span>
+      </div>
+
+      <a class="project-link" href="https://github.com/Hamza-dev-max/telco-connect-b2b" target="_blank">Voir sur GitHub →</a>
+    </article>
+
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">02</span>
+        <span class="project-cat">Machine Learning · NLP</span>
+      </div>
+
+      <h3>Spam Shield ML</h3>
+      <p>Classificateur automatique de messages spam avec interface utilisateur déployée via Streamlit. Pipeline ML complet de la donnée brute au modèle.</p>
+
+      <ul>
+        <li>Nettoyage et prétraitement des messages texte</li>
+        <li>Vectorisation TF-IDF</li>
+        <li>Classification avec Scikit-learn</li>
+        <li>Interface interactive Streamlit</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">TF-IDF</span>
+        <span class="tech-tag">NLP</span>
+        <span class="tech-tag">Streamlit</span>
+      </div>
+
+      <a class="project-link" href="https://github.com/Hamza-dev-max/spam-shield-ml" target="_blank">Voir sur GitHub →</a>
+    </article>
+
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">03</span>
+        <span class="project-cat">Django · Machine Learning</span>
+      </div>
+
+      <h3>AgriConnect</h3>
+      <p>Application de recommandation agricole : propose la culture la plus adaptée selon les paramètres du sol et les données météo en temps réel.</p>
+
+      <ul>
+        <li>Prédiction de culture via modèle ML entraîné</li>
+        <li>Intégration API météo en temps réel</li>
+        <li>Historique des prédictions avec graphiques</li>
+        <li>Authentification et interface Django</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Django</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">SQLite</span>
+        <span class="tech-tag">API météo</span>
+      </div>
+
+      <a class="project-link" href="https://github.com/Hamza-dev-max/agriconnect" target="_blank">Voir sur GitHub →</a>
+    </article>
+
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">04</span>
+        <span class="project-cat">Full Stack · Java</span>
+      </div>
+
+      <h3>TaskFlow</h3>
+      <p>Application full stack de gestion de tâches avec statuts, priorités, filtres, recherche et tableau de bord — architecture frontend/backend découplée.</p>
+
+      <ul>
+        <li>CRUD complet sur les tâches</li>
+        <li>API REST Java / Spring Boot</li>
+        <li>Frontend Angular avec TypeScript</li>
+        <li>Base de données MySQL avec relations</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Angular</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">MySQL</span>
+      </div>
+
+      <a class="project-link" href="https://github.com/Hamza-dev-max/taskflow" target="_blank">Voir sur GitHub →</a>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="competences">
+  <div class="section-header reveal">
+    <p class="eyebrow">Compétences</p>
+    <h2 class="section-title">Stack technique</h2>
+  </div>
+
+  <div class="skills-grid">
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">⌨️</div>
+      <h4>Langages</h4>
+      <div class="skill-items">
+        <span class="skill-item">Java · Python · JavaScript</span>
+        <span class="skill-item">TypeScript · C · C++ · PHP</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🎨</div>
+      <h4>Frontend</h4>
+      <div class="skill-items">
+        <span class="skill-item">React · Angular</span>
+        <span class="skill-item">HTML5 · CSS3 · Responsive</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">⚙️</div>
+      <h4>Backend</h4>
+      <div class="skill-items">
+        <span class="skill-item">Node.js · Express</span>
+        <span class="skill-item">Spring Boot · Django</span>
+        <span class="skill-item">API REST · JWT</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🗄️</div>
+      <h4>Bases de données</h4>
+      <div class="skill-items">
+        <span class="skill-item">MySQL · PostgreSQL</span>
+        <span class="skill-item">SQLite · CRUD · SQL</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🤖</div>
+      <h4>Machine Learning</h4>
+      <div class="skill-items">
+        <span class="skill-item">Scikit-learn · Pandas</span>
+        <span class="skill-item">NumPy · NLP · TF-IDF</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🔐</div>
+      <h4>Cybersécurité</h4>
+      <div class="skill-items">
+        <span class="skill-item">OWASP Top 10</span>
+        <span class="skill-item">JWT · Sécurité API · TCP/IP</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🛠️</div>
+      <h4>Outils & DevOps</h4>
+      <div class="skill-items">
+        <span class="skill-item">Git · GitHub · Postman</span>
+        <span class="skill-item">VS Code · Maven · Linux</span>
+      </div>
+    </article>
+
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🤝</div>
+      <h4>Soft Skills</h4>
+      <div class="skill-items">
+        <span class="skill-item">Autonomie · Rigueur</span>
+        <span class="skill-item">Communication · Équipe</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="certifications">
+  <div class="section-header reveal">
+    <p class="eyebrow">Certifications</p>
+    <h2 class="section-title">Formations complémentaires</h2>
+    <p class="section-subtitle">Certifications obtenues sur des plateformes reconnues, validant des compétences pratiques.</p>
+  </div>
+
+  <div class="certs-grid">
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">IBM</div>
+      <h4>Python for Data Science, AI & Development</h4>
+      <p>Python appliqué à la data science et à l'intelligence artificielle.</p>
+    </article>
+
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">University of Michigan</div>
+      <h4>Interactivity with JavaScript</h4>
+      <p>DOM, événements et interactions web dynamiques.</p>
+    </article>
+
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">HKUST</div>
+      <h4>Software Design and Project Management</h4>
+      <p>Conception logicielle, patterns et gestion de projet.</p>
+    </article>
+
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">EPFL</div>
+      <h4>Programmation orientée objet en C++</h4>
+      <p>Classes, héritage, polymorphisme et bonnes pratiques C++.</p>
+    </article>
+
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">Johns Hopkins University</div>
+      <h4>The Unix Workbench</h4>
+      <p>Environnement Unix, ligne de commande et scripts shell.</p>
+    </article>
+
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">Coursera</div>
+      <h4>HTML, CSS and JavaScript for Web Developers</h4>
+      <p>Développement web frontend complet et bonnes pratiques.</p>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="contact">
+  <div class="contact-card glass reveal">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Parlons de votre<br><em>prochain projet</em></h2>
+      <p>
+        Je suis disponible pour une alternance à partir de juin 2026, en développement logiciel,
+        web full stack, API REST ou cybersécurité applicative. N'hésitez pas à me contacter directement.
+      </p>
+    </div>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:marzaqhamza1@gmail.com">
+        <div class="contact-link-icon">✉️</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">Email</span>
+          <span>marzaqhamza1@gmail.com</span>
+        </div>
       </a>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
-    </nav>
+      <a class="contact-link" href="tel:+33762460640">
+        <div class="contact-link-icon">📱</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">Téléphone</span>
+          <span>07 62 46 06 40</span>
+        </div>
+      </a>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">Profil</a>
-      <a href="#skills">Compétences</a>
-      <a href="#projects">Projets</a>
-      <a href="#contact">Contact</a>
-      <a href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download>Télécharger mon CV</a>
+      <a class="contact-link" href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download>
+        <div class="contact-link-icon">📄</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">CV</span>
+          <span>Télécharger mon CV</span>
+        </div>
+      </a>
+
+      <a class="contact-link" href="https://www.linkedin.com/in/hamza-marzaq" target="_blank">
+        <div class="contact-link-icon">💼</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>linkedin.com/in/hamza-marzaq</span>
+        </div>
+      </a>
+
+      <a class="contact-link" href="https://github.com/Hamza-dev-max" target="_blank">
+        <div class="contact-link-icon">🐙</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">GitHub</span>
+          <span>github.com/Hamza-dev-max</span>
+        </div>
+      </a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <p class="badge">Disponible en alternance — Septembre 2026</p>
+</main>
 
-        <h1>
-          Développeur Full Stack<br />
-          orienté <span>Web, API & Cybersécurité</span>
-        </h1>
+<footer class="footer container">
+  <p>© 2026 <a href="https://github.com/Hamza-dev-max" target="_blank">Hamza Marzaq</a> — Portfolio personnel · Grenoble, France</p>
+</footer>
 
-        <p class="hero-text">
-          Étudiant en L3 Informatique à l’Université Grenoble Alpes, je recherche une alternance en développement full stack / cybersécurité.
-          J’aime construire des applications utiles, propres et sécurisées avec Java, Spring Boot, Angular, Python et PostgreSQL.
-        </p>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
 
-        <p class="availability">
-          Grenoble et alentours — mobilité possible selon opportunité — télétravail partiel accepté.
-        </p>
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">Voir mes projets</a>
-          <a href="#contact" class="btn-secondary">Me contacter</a>
-        </div>
-      </div>
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
 
-      <div class="hero-photo">
-        <img src="photo_pro_Hamza.jpeg" alt="Photo de Hamza Marzaq" class="profile-photo">
-      </div>
-    </section>
+  const revealEls = document.querySelectorAll('.reveal');
 
-    <section class="section" id="about">
-      <div class="section-title">
-        <p>À propos</p>
-        <h2>Mon profil</h2>
-      </div>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      <div class="about-card">
-        <p>
-          Je m'appelle <strong>Hamza Marzaq</strong>, étudiant en Licence 3 Informatique générale à l’Université Grenoble Alpes.
-          Mon parcours a commencé par une formation en informatique à l’EMSI, où j’ai travaillé sur plusieurs projets en équipe et individuels.
-        </p>
+  revealEls.forEach(el => observer.observe(el));
 
-        <p>
-          J’ai développé des projets autour du développement web, des API REST, de la gestion de données et du Machine Learning.
-          Je m’intéresse aussi fortement à la cybersécurité, notamment la sécurité des applications web, les API, l’authentification et les bonnes pratiques OWASP.
-        </p>
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
 
-        <p>
-          Je recherche une alternance à partir de septembre 2026 pour continuer à progresser sur des projets concrets en entreprise.
-        </p>
-      </div>
-    </section>
+  window.addEventListener('scroll', () => {
+    let current = '';
 
-    <section class="section" id="skills">
-      <div class="section-title">
-        <p>Compétences</p>
-        <h2>Technologies principales</h2>
-      </div>
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
 
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Frontend</h3>
-          <p>HTML, CSS, JavaScript, Angular, React</p>
-        </div>
+    navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+    });
+  }, { passive: true });
+</script>
 
-        <div class="skill-card">
-          <h3>Backend</h3>
-          <p>Java, Spring Boot, Python, Node.js, API REST</p>
-        </div>
-
-        <div class="skill-card">
-          <h3>Base de données</h3>
-          <p>PostgreSQL, MySQL, MongoDB, SQL</p>
-        </div>
-
-        <div class="skill-card">
-          <h3>Outils</h3>
-          <p>Git, GitHub, Docker, Linux, VS Code</p>
-        </div>
-
-        <div class="skill-card">
-          <h3>Cybersécurité</h3>
-          <p>OWASP Top 10, JWT, sécurité API, bonnes pratiques web</p>
-        </div>
-
-        <div class="skill-card">
-          <h3>Machine Learning</h3>
-          <p>Python, Scikit-learn, traitement de données, modèles de prédiction</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-title">
-        <p>Portfolio</p>
-        <h2>Mes projets</h2>
-      </div>
-
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-tag">Full Stack</span>
-            <h3>TaskFlow</h3>
-          </div>
-
-          <p>
-            Application de gestion de tâches développée avec Angular et Spring Boot.
-            Le projet permet de créer, organiser et suivre des tâches avec une architecture backend REST.
-          </p>
-
-          <div class="tech-list">
-            <span>Angular</span>
-            <span>Java</span>
-            <span>Spring Boot</span>
-            <span>PostgreSQL</span>
-          </div>
-
-          <div class="project-buttons">
-            <a href="#" target="_blank" class="btn-demo">Voir la démo</a>
-            <a href="#" target="_blank" class="btn-github">Code GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-tag">Machine Learning</span>
-            <h3>AgriConnect</h3>
-          </div>
-
-          <p>
-            Plateforme d’aide à la décision agricole utilisant Python et Scikit-learn.
-            Le projet recommande des cultures selon les données du sol, du climat et de la saison.
-          </p>
-
-          <div class="tech-list">
-            <span>Python</span>
-            <span>Scikit-learn</span>
-            <span>PostgreSQL</span>
-            <span>Data</span>
-          </div>
-
-          <div class="project-buttons">
-            <a href="#" target="_blank" class="btn-demo">Voir la démo</a>
-            <a href="#" target="_blank" class="btn-github">Code GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-tag">Web App</span>
-            <h3>Portfolio personnel</h3>
-          </div>
-
-          <p>
-            Portfolio responsive développé en HTML, CSS et JavaScript pour présenter mon profil,
-            mes compétences, mes projets et ma recherche d’alternance.
-          </p>
-
-          <div class="tech-list">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Responsive</span>
-          </div>
-
-          <div class="project-buttons">
-            <a href="#" target="_blank" class="btn-demo">Voir la démo</a>
-            <a href="#" target="_blank" class="btn-github">Code GitHub</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section github-section">
-      <div class="github-box">
-        <h2>GitHub propre et professionnel</h2>
-        <p>
-          Chaque projet contient un README clair avec description, technologies utilisées,
-          instructions d’installation et captures d’écran.
-        </p>
-
-        <a href="https://github.com/Hamza-dev-max" target="_blank" class="btn-primary">
-          Voir mon GitHub
-        </a>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-title">
-        <p>Contact</p>
-        <h2>Me contacter</h2>
-      </div>
-
-      <div class="contact-card">
-        <p>
-          Je suis actuellement à la recherche d’une alternance en développement full stack / cybersécurité à partir de septembre 2026.
-        </p>
-
-        <div class="contact-links">
-          <a href="mailto:ton.email@gmail.com">ton.email@gmail.com</a>
-          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Hamza-dev-max" target="_blank">GitHub</a>
-          <a href="CV_HAMZA_MARZAQ_FINAL_DEV.pdf" download>Télécharger mon CV</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Hamza Marzaq — Portfolio personnel</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
