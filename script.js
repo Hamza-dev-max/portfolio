@@ -1,10 +1,14 @@
-const menu = document.getElementById("menu");
-const links = document.getElementById("links");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
-menu.addEventListener("click", () => {
-  links.classList.toggle("open");
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
 });
 
-document.querySelectorAll(".links a").forEach((link) => {
-  link.addEventListener("click", () => links.classList.remove("open"));
+const mobileLinks = mobileMenu.querySelectorAll("a");
+
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
 });
