@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portfolio — Hamza Marzaq | Développeur Full Stack</title>
-
-  <meta name="description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
+  <title>Hamza Marzaq — Développeur Full Stack</title>
+  <meta name="description" content="Portfolio de Hamza Marzaq — Développeur Full Stack orienté API REST, projets web, Machine Learning et cybersécurité. Disponible en alternance dès juin 2026." />
   <meta name="author" content="Hamza Marzaq" />
 
-  <!-- LinkedIn / Open Graph -->
-  <meta property="og:title" content="Portfolio — Hamza Marzaq | Développeur Full Stack" />
-  <meta property="og:description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
+  <meta property="og:title" content="Hamza Marzaq — Développeur Full Stack" />
+  <meta property="og:description" content="Portfolio de Hamza Marzaq — Développeur Full Stack orienté API REST, projets web, Machine Learning et cybersécurité. Disponible en alternance dès juin 2026." />
   <meta property="og:image" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
   <meta property="og:image:secure_url" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
   <meta property="og:image:type" content="image/png" />
@@ -20,1047 +18,1076 @@
   <meta property="og:url" content="https://hamza-dev-max.github.io/portfolio/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter / X Preview -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Portfolio — Hamza Marzaq | Développeur Full Stack" />
-  <meta name="twitter:description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
+  <meta name="twitter:title" content="Hamza Marzaq — Développeur Full Stack" />
+  <meta name="twitter:description" content="Portfolio de Hamza Marzaq — Développeur Full Stack orienté API REST, projets web, Machine Learning et cybersécurité. Disponible en alternance dès juin 2026." />
   <meta name="twitter:image" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #050816;
-      --surface: rgba(255, 255, 255, 0.075);
-      --border: rgba(255, 255, 255, 0.14);
-      --text: #f8fafc;
-      --muted: #a7b4ca;
-      --accent: #5eead4;
-      --blue: #60a5fa;
-      --purple: #a78bfa;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+      --bg: #0a0f1e;
+      --bg2: #0d1428;
+      --surface: rgba(255,255,255,0.055);
+      --surface-hover: rgba(255,255,255,0.085);
+      --border: rgba(255,255,255,0.1);
+      --border-accent: rgba(99,202,183,0.35);
+      --text: #eef2f9;
+      --muted: #8a9ab8;
+      --muted2: #b0bfd6;
+      --accent: #63cab7;
+      --accent2: #4db8c8;
+      --blue: #6ba3f0;
+      --purple: #a88ef0;
+      --gold: #f0c060;
+      --glow: 0 0 40px rgba(99,202,183,0.18);
+      --shadow-card: 0 24px 64px rgba(0,0,0,0.45);
+      --radius: 24px;
+      --radius-sm: 14px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-body);
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(94, 234, 212, 0.15), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(96, 165, 250, 0.17), transparent 27%),
-        radial-gradient(circle at 50% 80%, rgba(167, 139, 250, 0.12), transparent 32%),
-        linear-gradient(180deg, #050816 0%, #07101f 48%, #050816 100%);
+      background: var(--bg);
       min-height: 100vh;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+      content: '';
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 0%, rgba(99,202,183,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 45% at 90% 10%, rgba(107,163,240,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 40% at 50% 90%, rgba(168,142,240,0.09) 0%, transparent 55%),
+        linear-gradient(175deg, #0a0f1e 0%, #080d1a 50%, #0a0f1e 100%);
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 58px 58px;
-      mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
-      opacity: 0.55;
-      z-index: -3;
+        linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 80%);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
-    .container {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      backdrop-filter: blur(18px);
+      position: sticky; top: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1240px; margin: 0 auto;
+      padding: 16px 28px;
+      backdrop-filter: blur(24px) saturate(1.4);
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand span {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand-icon {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 14px;
       background: linear-gradient(135deg, var(--accent), var(--blue));
-      color: #04111a;
-      font-weight: 950;
-      box-shadow: 0 18px 42px rgba(94, 234, 212, 0.16);
+      color: #06111a;
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 400;
+      box-shadow: 0 8px 28px rgba(99,202,183,0.22);
     }
-
-    .brand strong {
-      font-size: 18px;
-      letter-spacing: -0.04em;
-    }
+    .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
+    .brand-role { font-size: 12px; color: var(--muted); margin-top: 1px; }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.055);
+      display: flex; align-items: center; gap: 2px;
+      padding: 7px; border: 1px solid var(--border);
+      background: rgba(10,15,30,0.7);
       border-radius: 999px;
     }
-
     .nav-links a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 850;
-      padding: 10px 13px;
-      border-radius: 999px;
-      transition: 0.22s ease;
+      color: var(--muted); font-size: 13px; font-weight: 500;
+      padding: 8px 14px; border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface-hover); }
+
+    .nav-cta { display: flex; align-items: center; gap: 8px; }
+    .badge-available {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: 999px;
+      border: 1px solid rgba(99,202,183,0.3);
+      background: rgba(99,202,183,0.08);
+      font-size: 12px; font-weight: 600; color: var(--accent);
+    }
+    .badge-available::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.09);
-    }
-
-    .menu-button {
-      display: none;
-      cursor: pointer;
+    .menu-btn {
+      display: none; cursor: pointer;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
-      border-radius: 14px;
-      padding: 9px 12px;
-      font-size: 22px;
+      border-radius: 12px; padding: 9px 12px;
+      font-size: 20px;
     }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 
     .hero {
-      min-height: calc(100vh - 82px);
+      min-height: calc(100vh - 78px);
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) 420px;
+      grid-template-columns: 1fr 400px;
       align-items: center;
-      gap: 38px;
-      padding-top: 60px;
-      padding-bottom: 80px;
+      gap: 48px;
+      padding: 80px 0 100px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      margin: 0 0 18px;
-      padding: 9px 14px;
-      border: 1px solid rgba(94, 234, 212, 0.33);
-      background: rgba(94, 234, 212, 0.09);
-      color: #ccfff6;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 12px;
-      font-weight: 950;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 24px;
+      padding: 9px 16px;
+      border: 1px solid rgba(99,202,183,0.28);
+      background: rgba(99,202,183,0.07);
+      color: #a8f0e4; border-radius: 999px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .hero-eyebrow span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 6px var(--accent);
+      animation: pulse 2s infinite;
     }
 
-    h1 {
-      margin-bottom: 0;
-      font-size: clamp(48px, 7.8vw, 94px);
-      line-height: 0.92;
-      letter-spacing: -0.075em;
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7.5vw, 96px);
+      line-height: 0.94;
+      letter-spacing: -0.025em;
+      font-weight: 400;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(130deg, #ffffff 20%, var(--accent) 55%, var(--blue) 90%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
 
-    h1 span {
-      display: block;
-      margin-top: 8px;
-      background: linear-gradient(135deg, #ffffff, var(--accent), var(--blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero-desc {
+      margin-top: 28px; max-width: 700px;
+      color: var(--muted2); font-size: 18px; line-height: 1.75; font-weight: 300;
     }
 
-    .hero-description {
-      max-width: 780px;
-      margin: 28px 0 0;
-      color: var(--muted);
-      font-size: 21px;
-      line-height: 1.72;
+    .hero-value {
+      margin-top: 20px; padding: 18px 20px;
+      border-left: 2px solid var(--accent);
+      background: rgba(99,202,183,0.06);
+      border-radius: 0 14px 14px 0;
+      font-size: 15px; color: var(--muted2); line-height: 1.7;
     }
+    .hero-value strong { color: var(--text); font-weight: 600; }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; min-height: 48px; padding: 13px 22px;
+      border-radius: var(--radius-sm); font-weight: 600;
+      font-family: var(--font-body); font-size: 14px;
+      cursor: pointer; border: none;
+      transition: all 0.22s ease;
     }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 14px 18px;
-      border-radius: 16px;
-      font-weight: 950;
-      transition: 0.22s ease;
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #04111a;
+      box-shadow: 0 12px 36px rgba(99,202,183,0.22);
     }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    .button-primary {
-      color: #06111a;
-      background: linear-gradient(135deg, var(--accent), var(--blue));
-      box-shadow: 0 18px 44px rgba(94, 234, 212, 0.16);
-    }
-
-    .button-secondary {
-      color: var(--text);
+    .btn-primary:hover { box-shadow: 0 18px 48px rgba(99,202,183,0.35); }
+    .btn-outline {
+      background: var(--surface); color: var(--text);
       border: 1px solid var(--border);
-      background: var(--surface);
     }
-
-    .button-ghost {
-      color: var(--accent);
-      border: 1px solid rgba(94, 234, 212, 0.26);
-      background: rgba(94, 234, 212, 0.07);
+    .btn-outline:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.2); }
+    .btn-ghost {
+      background: transparent; color: var(--accent);
+      border: 1px solid var(--border-accent);
     }
+    .btn-ghost:hover { background: rgba(99,202,183,0.08); }
 
     .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 38px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 40px;
     }
+    .stat-item {
+      padding: 18px 16px; border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+    }
+    .stat-item strong {
+      display: block; font-size: 22px; font-weight: 700;
+      color: var(--text); margin-bottom: 4px;
+      font-family: var(--font-display);
+    }
+    .stat-item span { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .hero-card {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(24px);
+      border-radius: 28px; padding: 28px;
+      box-shadow: var(--shadow-card);
+      position: relative; overflow: hidden;
+    }
+    .hero-card::before {
+      content: ''; position: absolute;
+      width: 220px; height: 220px;
+      top: -80px; right: -60px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,202,183,0.18), transparent 70%);
+      pointer-events: none;
+    }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 22px;
+      background: linear-gradient(135deg, var(--accent), var(--blue), var(--purple));
+      display: grid; place-items: center;
+      font-family: var(--font-display); font-size: 28px;
+      color: #04111a; margin-bottom: 18px;
+      box-shadow: 0 12px 32px rgba(99,202,183,0.2);
+    }
+    .card-name { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; }
+    .card-role { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+
+    .info-rows { display: grid; gap: 8px; margin-bottom: 20px; }
+    .info-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 14px; border-radius: 12px;
+      background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.07);
+    }
+    .info-row-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .info-row-value { font-size: 13px; font-weight: 500; }
+    .info-row-value.accent { color: var(--accent); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      padding: 6px 11px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      font-size: 12px; font-weight: 500; color: var(--muted2);
+    }
+
+    .section { padding: 88px 0; }
+    .section-header { margin-bottom: 48px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: ''; width: 20px; height: 2px;
+      background: var(--accent); border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 400; line-height: 1.06;
+      letter-spacing: -0.025em;
+    }
+    .section-title em { font-style: italic; color: var(--muted); }
+    .section-subtitle { margin-top: 12px; color: var(--muted2); font-size: 17px; line-height: 1.7; font-weight: 300; }
 
     .glass {
       border: 1px solid var(--border);
       background: var(--surface);
       backdrop-filter: blur(20px);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-card);
     }
 
-    .hero-stats article {
-      padding: 18px;
-      border-radius: 20px;
-    }
+    .profile-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
 
-    .hero-stats strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--text);
-      font-size: 18px;
+    .profile-main { border-radius: var(--radius); padding: 36px; }
+    .profile-main h3 {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 400;
+      margin-bottom: 16px; letter-spacing: -0.02em;
     }
+    .profile-main p { color: var(--muted2); line-height: 1.8; font-size: 16px; margin-bottom: 14px; }
+    .profile-main p:last-child { margin-bottom: 0; }
 
-    .hero-stats span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
+    .profile-side { display: grid; gap: 20px; }
+    .mini-card {
+      border-radius: var(--radius); padding: 26px;
+      position: relative; overflow: hidden;
     }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: 32px;
+    .mini-card-num {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 400;
+      color: rgba(99,202,183,0.18);
+      position: absolute; top: 12px; right: 18px;
+      line-height: 1;
     }
+    .mini-card h4 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .mini-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      top: -90px;
-      right: -90px;
-      border-radius: 999px;
-      background: rgba(94, 234, 212, 0.14);
-    }
-
-    .profile-avatar {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin-bottom: 22px;
-      display: grid;
-      place-items: center;
-      border-radius: 34px;
-      background: linear-gradient(135deg, var(--accent), var(--blue), var(--purple));
-      color: #06111a;
-      font-size: 38px;
-      font-weight: 1000;
-    }
-
-    .hero-card h2 {
-      margin-bottom: 8px;
-      font-size: 29px;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-card p {
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .quick-info {
-      display: grid;
-      gap: 12px;
-      margin: 24px 0;
-    }
-
-    .quick-info div {
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.055);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-    }
-
-    .quick-info span {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 4px;
-      font-size: 12px;
-      font-weight: 850;
-    }
-
-    .quick-info strong {
-      font-size: 14px;
-    }
-
-    .stack-tags,
-    .tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .stack-tags span,
-    .tech-list span {
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.065);
-      color: #dce7f5;
-      font-size: 12px;
-      font-weight: 850;
-    }
-
-    .section {
-      padding-top: 82px;
-      padding-bottom: 82px;
-    }
-
-    .section-heading {
-      max-width: 820px;
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      margin-bottom: 12px;
-      font-size: clamp(35px, 5vw, 58px);
-      line-height: 1.02;
-      letter-spacing: -0.06em;
-    }
-
-    .section-heading p:not(.eyebrow) {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 17px;
-    }
-
-    .profile-layout,
-    .experience-grid,
-    .projects-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .profile-layout {
-      grid-template-columns: 1.45fr 0.75fr;
-    }
-
-    .experience-grid,
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card,
-    .timeline-card,
-    .experience-card,
-    .project-card,
-    .skill-card,
-    .cert-card,
-    .contact-card {
-      border-radius: 28px;
-      padding: 28px;
-    }
-
-    .large-card {
-      grid-row: span 2;
-    }
-
-    .card h3,
-    .timeline-card h3,
-    .experience-card h3,
-    .project-card h3,
-    .skill-card h3,
-    .cert-card h3 {
-      margin-bottom: 12px;
-      font-size: 23px;
-      letter-spacing: -0.035em;
-    }
-
-    .card p,
-    .timeline-card p,
-    .experience-card p,
-    .project-card p,
-    .skill-card p,
-    .cert-card p,
-    .contact-card p {
-      color: var(--muted);
-      line-height: 1.72;
-    }
-
-    .highlight-number {
-      display: inline-flex;
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-size: 34px;
-      font-weight: 1000;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 18px;
-    }
-
+    .timeline { display: grid; gap: 0; }
+    .timeline-item { display: grid; grid-template-columns: 28px 1fr; gap: 20px; }
+    .timeline-left { display: flex; flex-direction: column; align-items: center; }
     .timeline-dot {
-      width: 14px;
-      height: 14px;
-      margin-top: 30px;
-      border-radius: 999px;
+      width: 12px; height: 12px; border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 8px rgba(94, 234, 212, 0.12);
+      box-shadow: 0 0 0 4px rgba(99,202,183,0.15);
+      flex-shrink: 0; margin-top: 6px;
     }
+    .timeline-line {
+      flex: 1; width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      margin-top: 8px; margin-bottom: -4px;
+      min-height: 40px;
+    }
+    .timeline-card { border-radius: var(--radius); padding: 26px; margin-bottom: 16px; }
+    .timeline-date {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px;
+    }
+    .timeline-card h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .timeline-card p { color: var(--muted2); font-size: 14px; line-height: 1.7; }
 
-    .timeline-card span,
-    .card-top span,
-    .cert-card span {
-      display: inline-flex;
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-size: 13px;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .exp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .exp-card { border-radius: var(--radius); padding: 30px; }
+    .exp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .exp-badge {
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      flex-shrink: 0;
     }
+    .exp-badge.stage { background: rgba(99,202,183,0.15); color: var(--accent); border: 1px solid rgba(99,202,183,0.25); }
+    .exp-badge.tutorat { background: rgba(107,163,240,0.12); color: var(--blue); border: 1px solid rgba(107,163,240,0.22); }
+    .exp-date { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .exp-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 10px; }
+    .exp-card p { color: var(--muted2); font-size: 14px; line-height: 1.72; }
+    .exp-card ul { margin-top: 16px; padding-left: 0; list-style: none; display: grid; gap: 8px; }
+    .exp-card ul li { display: flex; align-items: baseline; gap: 10px; font-size: 14px; color: var(--muted2); line-height: 1.6; }
+    .exp-card ul li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 12px; }
 
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .card-top strong {
-      color: #06111a;
-      background: linear-gradient(135deg, var(--accent), var(--blue));
-      padding: 7px 11px;
-      border-radius: 999px;
-      font-size: 12px;
-    }
-
-    .experience-card ul,
-    .project-card ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
-      color: #d8e1ef;
-      line-height: 1.85;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
     .project-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      border-radius: 34px;
-      padding: 31px;
+      border-radius: 28px; padding: 30px;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(0,0,0,0.55); }
     .project-card.featured {
       background:
-        linear-gradient(135deg, rgba(94, 234, 212, 0.13), rgba(96, 165, 250, 0.08)),
+        linear-gradient(135deg, rgba(99,202,183,0.1), rgba(107,163,240,0.06)),
         var(--surface);
+      border-color: rgba(99,202,183,0.2);
     }
 
-    .project-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .project-num { font-family: var(--font-display); font-size: 46px; color: rgba(255,255,255,0.12); line-height: 1; font-weight: 400; }
+    .project-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); text-align: right; line-height: 1.6; }
 
-    .project-index {
-      font-size: 43px;
-      font-weight: 1000;
-      color: rgba(255, 255, 255, 0.25);
-    }
+    .project-card h3 { font-family: var(--font-display); font-size: 30px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .project-card p { color: var(--muted2); font-size: 14px; line-height: 1.75; }
+    .project-card ul { margin: 16px 0 0; padding-left: 0; list-style: none; display: grid; gap: 7px; }
+    .project-card ul li { display: flex; align-items: baseline; gap: 10px; font-size: 13px; color: var(--muted2); line-height: 1.5; }
+    .project-card ul li::before { content: '▸'; color: var(--accent); font-size: 10px; flex-shrink: 0; }
 
-    .project-category {
-      color: #ccfff6;
-      font-size: 13px;
-      font-weight: 900;
-      text-align: right;
-    }
-
-    .project-card h3 {
-      font-size: 36px;
-    }
-
-    .tech-list {
-      margin-top: 22px;
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .tech-tag {
+      padding: 5px 10px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.055);
+      font-size: 11px; font-weight: 600; color: var(--muted2);
     }
 
     .project-link {
-      display: inline-flex;
-      width: fit-content;
-      margin-top: auto;
-      padding-top: 24px;
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: auto; padding-top: 22px;
+      font-size: 13px; font-weight: 700;
       color: var(--accent);
-      font-weight: 1000;
+      transition: gap 0.2s ease;
     }
+    .project-link:hover { gap: 10px; }
 
-    .skills-grid,
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .skill-card { border-radius: 20px; padding: 22px; transition: transform 0.2s ease, border-color 0.2s ease; }
+    .skill-card:hover { transform: translateY(-3px); border-color: rgba(99,202,183,0.3); }
+    .skill-icon { font-size: 26px; margin-bottom: 12px; }
+    .skill-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .skill-items { display: flex; flex-direction: column; gap: 4px; }
+    .skill-item { font-size: 13px; color: var(--muted2); }
+
+    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cert-card { border-radius: 20px; padding: 22px; }
+    .cert-issuer { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+    .cert-card h4 { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.4; }
+    .cert-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .langs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+    .lang-card { border-radius: 18px; padding: 20px; text-align: center; }
+    .lang-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .lang-level { font-size: 12px; color: var(--muted); }
+    .lang-bar { margin-top: 12px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; }
+    .lang-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--blue)); }
 
     .contact-card {
-      display: grid;
-      grid-template-columns: 1fr 0.85fr;
-      gap: 32px;
-      align-items: center;
-      border-radius: 36px;
-      padding: 38px;
+      border-radius: 32px; padding: 48px;
+      display: grid; grid-template-columns: 1fr 0.9fr;
+      gap: 48px; align-items: center;
+      background:
+        linear-gradient(135deg, rgba(99,202,183,0.08), rgba(107,163,240,0.05)),
+        var(--surface);
+      border-color: rgba(99,202,183,0.15);
     }
-
     .contact-card h2 {
-      margin-bottom: 16px;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.04;
-      letter-spacing: -0.06em;
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 400; line-height: 1.08;
+      letter-spacing: -0.025em; margin-bottom: 16px;
     }
+    .contact-card h2 em { font-style: italic; color: var(--accent); }
+    .contact-card p { color: var(--muted2); font-size: 16px; line-height: 1.75; }
 
-    .contact-links {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-links a {
-      padding: 16px 18px;
+    .contact-links { display: grid; gap: 10px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 18px; border-radius: 16px;
+      background: rgba(255,255,255,0.055);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.065);
-      font-weight: 900;
-      transition: 0.2s ease;
+      font-size: 14px; font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .contact-link:hover { background: rgba(255,255,255,0.09); border-color: rgba(99,202,183,0.35); transform: translateX(4px); }
+    .contact-link-icon { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-size: 16px; background: var(--surface); flex-shrink: 0; }
+    .contact-link-info { display: flex; flex-direction: column; gap: 1px; }
+    .contact-link-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+
+    .footer { padding: 28px 0 40px; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+    .footer a { color: var(--accent); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1060px) {
+      .hero, .profile-grid, .contact-card { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    .contact-links a:hover {
-      transform: translateX(4px);
-      border-color: rgba(94, 234, 212, 0.45);
-    }
-
-    .footer {
-      padding-top: 24px;
-      padding-bottom: 42px;
-      color: var(--muted);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: 0.65s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1080px) {
-      .hero,
-      .profile-layout,
-      .experience-grid,
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid,
-      .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .menu-button {
-        display: block;
-      }
-
+    @media (max-width: 860px) {
+      .menu-btn { display: block; }
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 16px;
-        right: 16px;
-        flex-direction: column;
-        align-items: stretch;
-        border-radius: 24px;
-        padding: 12px;
+        display: none; position: absolute;
+        top: 68px; left: 16px; right: 16px;
+        flex-direction: column; align-items: stretch;
+        border-radius: 22px; padding: 10px;
+        background: rgba(10,15,30,0.97);
       }
+      .nav-links.open { display: flex; }
+      .nav-cta { display: none; }
+      .projects-grid, .exp-grid, .langs-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .container { padding: 0 18px; }
+      .section { padding: 64px 0; }
+      .contact-card { padding: 30px; }
+    }
 
-      .nav-links.open {
-        display: flex;
-      }
-
-      .projects-grid,
-      .skills-grid,
-      .certifications-grid,
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .section {
-        padding-top: 58px;
-        padding-bottom: 58px;
-      }
-
-      h1 {
-        font-size: clamp(44px, 15vw, 68px);
-      }
-
-      .hero-description {
-        font-size: 18px;
-      }
-
-      .project-header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .project-category {
-        text-align: left;
-      }
+    @media (max-width: 520px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .skills-grid, .certs-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
-  <header class="navbar">
+
+<header style="position:sticky;top:0;z-index:200;backdrop-filter:blur(24px);border-bottom:1px solid var(--border);">
+  <nav class="navbar">
     <a class="brand" href="#top">
-      <span>HM</span>
-      <strong>Hamza Marzaq</strong>
+      <div class="brand-icon">HM</div>
+      <div>
+        <div class="brand-name">Hamza Marzaq</div>
+        <div class="brand-role">Développeur Full Stack</div>
+      </div>
     </a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#profile">Profil</a>
-      <a href="#education">Formation</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#profil">Profil</a>
+      <a href="#formation">Formation</a>
       <a href="#experience">Expérience</a>
-      <a href="#projects">Projets</a>
-      <a href="#skills">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
 
-    <button class="menu-button" id="menuButton">☰</button>
-  </header>
+    <div class="nav-cta">
+      <div class="badge-available">Alternance juin 2026</div>
+    </div>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-content reveal">
-        <p class="eyebrow">Disponible pour une alternance — Septembre 2026</p>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </nav>
+</header>
 
-        <h1>
-          Développeur Full Stack
-          <span>orienté projets, API & sécurité.</span>
-        </h1>
+<main id="top">
+<section class="hero container">
+  <div class="hero-content reveal">
+    <p class="hero-eyebrow"><span></span> Disponible pour une alternance — Juin 2026</p>
 
-        <p class="hero-description">
-          Étudiant en Licence 3 Informatique à l’Université Grenoble Alpes, je conçois des applications web,
-          des API REST et des projets Machine Learning avec une approche claire, structurée et professionnelle.
-        </p>
+    <h1>
+      Développeur<br>
+      Full Stack<br>
+      <em>orienté API & sécurité</em>
+    </h1>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Voir mes projets</a>
-          <a class="button button-secondary" href="mailto:marzaqhamza1@gmail.com">Me contacter</a>
-          <a class="button button-ghost" href="https://github.com/Hamza-dev-max" target="_blank">GitHub</a>
-        </div>
+    <p class="hero-desc">
+      Étudiant en Licence 3 Informatique à l'Université Grenoble Alpes, je conçois
+      des applications web complètes, des API REST robustes et des projets Machine Learning
+      structurés — avec un vrai souci de qualité à chaque étape.
+    </p>
 
-        <div class="hero-stats">
-          <article class="glass">
-            <strong>4+</strong>
-            <span>Projets portfolio</span>
-          </article>
-          <article class="glass">
-            <strong>Full Stack</strong>
-            <span>Frontend, backend, API</span>
-          </article>
-          <article class="glass">
-            <strong>Cyber / ML</strong>
-            <span>Sécurité web & classification</span>
-          </article>
-        </div>
+    <div class="hero-value">
+      <strong>Ce que j'apporte :</strong> une double compétence Full Stack + ML, une approche orientée
+      résultats, et la capacité à livrer des projets documentés et maintenables.
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projets">Voir mes projets →</a>
+      <a class="btn btn-outline" href="mailto:marzaqhamza1@gmail.com">Me contacter</a>
+      <a class="btn btn-ghost" href="https://github.com/Hamza-dev-max" target="_blank">GitHub ↗</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <strong>4+</strong>
+        <span>Projets portfolio documentés</span>
       </div>
+      <div class="stat-item">
+        <strong>Full Stack</strong>
+        <span>React · Node · Spring Boot</span>
+      </div>
+      <div class="stat-item">
+        <strong>ML & Cyber</strong>
+        <span>Scikit-learn · OWASP · JWT</span>
+      </div>
+    </div>
+  </div>
 
-      <aside class="hero-card glass reveal">
-        <div class="profile-avatar">HM</div>
+  <aside class="hero-card reveal">
+    <div class="avatar">HM</div>
+    <div class="card-name">Hamza Marzaq</div>
+    <div class="card-role">Full Stack · API REST · Machine Learning · Cybersécurité<br>Alternance — Juin 2026</div>
 
+    <div class="info-rows">
+      <div class="info-row">
+        <span class="info-row-label">Localisation</span>
+        <span class="info-row-value">Grenoble, France</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Recherche</span>
+        <span class="info-row-value accent">Alternance 2026</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Formation</span>
+        <span class="info-row-value">Licence 3 Info — UGA</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row-label">Email</span>
+        <span class="info-row-value" style="font-size:12px">marzaqhamza1@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">React</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">Java</span>
+      <span class="tag">Spring Boot</span>
+      <span class="tag">Python</span>
+      <span class="tag">Django</span>
+      <span class="tag">SQL</span>
+      <span class="tag">JWT</span>
+    </div>
+  </aside>
+</section>
+
+<section class="container section" id="profil">
+  <div class="section-header reveal">
+    <p class="eyebrow">Profil</p>
+    <h2 class="section-title">Un développeur technique,<br><em>orienté impact</em></h2>
+  </div>
+
+  <div class="profile-grid">
+    <article class="profile-main glass reveal">
+      <h3>Qui suis-je ?</h3>
+      <p>
+        Je suis étudiant en Licence 3 Informatique à l'Université Grenoble Alpes, avec un profil orienté développement
+        logiciel, applications web full stack, API REST, Machine Learning et cybersécurité applicative.
+      </p>
+      <p>
+        Mon objectif est de rejoindre une entreprise en alternance pour contribuer à des projets concrets et continuer
+        à progresser dans un contexte professionnel exigeant. Je cherche une équipe où je peux apporter de la valeur
+        dès le premier jour, tout en apprenant des pratiques du terrain.
+      </p>
+      <p>
+        Chacun de mes projets portfolio est conçu pour être <strong>réaliste, documenté et maintenable</strong> —
+        pas juste un exercice, mais une démonstration de ma façon de travailler.
+      </p>
+      <div class="tags" style="margin-top:20px">
+        <span class="tag">Autonome</span>
+        <span class="tag">Rigoureux</span>
+        <span class="tag">Curieux</span>
+        <span class="tag">Orienté qualité</span>
+        <span class="tag">Travail en équipe</span>
+      </div>
+    </article>
+
+    <div class="profile-side">
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">01</div>
+        <h4>🌐 Développement Web Full Stack</h4>
+        <p>Création d'applications complètes : React en frontend, Node.js / Spring Boot en backend, avec authentification et API REST.</p>
+      </article>
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">02</div>
+        <h4>🤖 Machine Learning & Data</h4>
+        <p>Pipelines ML avec Scikit-learn, vectorisation NLP, déploiement via Streamlit. Classification et prédiction sur données réelles.</p>
+      </article>
+      <article class="mini-card glass reveal">
+        <div class="mini-card-num">03</div>
+        <h4>🔐 Cybersécurité applicative</h4>
+        <p>Connaissances OWASP Top 10, bonnes pratiques JWT, sécurité des API REST et sensibilisation à la sécurité web.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section" id="formation">
+  <div class="section-header reveal">
+    <p class="eyebrow">Formation</p>
+    <h2 class="section-title">Parcours académique</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2025 — Présent</div>
+        <h3>Licence 3 Informatique — Université Grenoble Alpes</h3>
+        <p>Programmation avancée, algorithmique, bases de données relationnelles, architecture système, réseaux et développement logiciel appliqué.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2024 — 2025</div>
+        <h3>Cycle Ingénierie Informatique — EMSI Rabat</h3>
+        <p>Développement logiciel orienté objet, projets web concrets, bases de données et conception d'applications.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-card glass">
+        <div class="timeline-date">2022 — 2024</div>
+        <h3>Cycle Préparatoire Informatique — EMSI Rabat</h3>
+        <p>Fondements solides : mathématiques, algorithmique, logique de programmation et résolution de problèmes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header reveal" style="margin-top:52px; margin-bottom:16px;">
+    <p class="eyebrow">Langues</p>
+  </div>
+  <div class="langs-grid">
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Français</div>
+      <div class="lang-level">Courant</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div>
+    </div>
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Anglais</div>
+      <div class="lang-level">Professionnel</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
+    </div>
+    <div class="lang-card glass reveal">
+      <div class="lang-name">Arabe</div>
+      <div class="lang-level">Langue maternelle</div>
+      <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="container section" id="experience">
+  <div class="section-header reveal">
+    <p class="eyebrow">Expérience</p>
+    <h2 class="section-title">Expériences professionnelles</h2>
+  </div>
+
+  <div class="exp-grid">
+    <article class="exp-card glass reveal">
+      <div class="exp-header">
         <div>
-          <h2>Hamza Marzaq</h2>
-          <p>Développement logiciel • Web full stack • Machine Learning • Cybersécurité</p>
+          <div class="exp-date">Juillet 2025</div>
+          <h3>Développeur Logiciel — Atlantis</h3>
         </div>
-
-        <div class="quick-info">
-          <div>
-            <span>Localisation</span>
-            <strong>Grenoble, France</strong>
-          </div>
-          <div>
-            <span>Recherche</span>
-            <strong>Alternance 2026</strong>
-          </div>
-          <div>
-            <span>Contact</span>
-            <strong>marzaqhamza1@gmail.com</strong>
-          </div>
-        </div>
-
-        <div class="stack-tags">
-          <span>React</span>
-          <span>Node.js</span>
-          <span>Java</span>
-          <span>Spring Boot</span>
-          <span>Python</span>
-          <span>Django</span>
-          <span>SQL</span>
-          <span>JWT</span>
-        </div>
-      </aside>
-    </section>
-
-    <section class="container section" id="profile">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Profil</p>
-        <h2>Un profil technique, motivé et orienté résultats.</h2>
+        <span class="exp-badge stage">Stage</span>
       </div>
+      <p>Participation au développement backend d'une application d'entreprise. Travail en équipe sur une codebase Java/Spring Boot existante.</p>
+      <ul>
+        <li>Développement de nouvelles fonctionnalités backend</li>
+        <li>Identification et correction de bugs</li>
+        <li>Utilisation de Git / GitHub dans un workflow collaboratif</li>
+        <li>Participation aux échanges techniques avec l'équipe</li>
+      </ul>
+    </article>
 
-      <div class="profile-layout">
-        <article class="card glass large-card reveal">
-          <h3>Présentation</h3>
-          <p>
-            Je suis étudiant en Licence 3 Informatique à l’Université Grenoble Alpes. Mon objectif est de rejoindre
-            une entreprise en alternance pour contribuer à des projets concrets en développement logiciel,
-            développement web full stack ou cybersécurité.
-          </p>
-          <p>
-            Je travaille sur des projets structurés afin de démontrer mes compétences : applications web,
-            API REST, dashboards, systèmes d’authentification, projets Machine Learning et documentation GitHub.
-          </p>
-        </article>
-
-        <article class="card glass reveal">
-          <span class="highlight-number">01</span>
-          <h3>Développement web</h3>
-          <p>Création d’interfaces modernes, d’API REST et d’applications full stack.</p>
-        </article>
-
-        <article class="card glass reveal">
-          <span class="highlight-number">02</span>
-          <h3>Cybersécurité</h3>
-          <p>Intérêt pour la sécurité applicative, OWASP Top 10, JWT et bonnes pratiques web.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="container section" id="education">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Études</p>
-        <h2>Formation académique</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span>2025 — présent</span>
-            <h3>Licence 3 Informatique — Université Grenoble Alpes</h3>
-            <p>Programmation, algorithmique, bases de données, systèmes, réseaux et développement logiciel.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span>2024 — 2025</span>
-            <h3>Cycle d’ingénierie Informatique — EMSI Rabat</h3>
-            <p>Développement logiciel, projets web, bases de données et programmation orientée objet.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span>2022 — 2024</span>
-            <h3>Cycle préparatoire Informatique — EMSI Rabat</h3>
-            <p>Bases solides en mathématiques, algorithmique, programmation et résolution de problèmes.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="container section" id="experience">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Professionnel</p>
-        <h2>Expériences professionnelles</h2>
-      </div>
-
-      <div class="experience-grid">
-        <article class="experience-card glass reveal">
-          <div class="card-top">
-            <span>Juillet 2025</span>
-            <strong>Stage</strong>
-          </div>
-          <h3>Stagiaire Développeur Logiciel — Atlantis</h3>
-          <p>Participation au développement backend en Java/Spring Boot, correction de bugs et utilisation de Git/GitHub.</p>
-          <ul>
-            <li>Développement de fonctionnalités backend</li>
-            <li>Correction de bugs et amélioration de la stabilité</li>
-            <li>Participation aux échanges techniques</li>
-          </ul>
-        </article>
-
-        <article class="experience-card glass reveal">
-          <div class="card-top">
-            <span>2021 — 2022</span>
-            <strong>Tutorat</strong>
-          </div>
-          <h3>Tuteur académique en informatique — Institut Al Najah</h3>
-          <p>Encadrement d’étudiants en programmation, mathématiques appliquées et logique de résolution de problèmes.</p>
-          <ul>
-            <li>Accompagnement en JavaScript, C++ et algorithmique</li>
-            <li>Explication de concepts de programmation orientée objet</li>
-            <li>Communication technique avec des étudiants</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="container section" id="projects">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Projets</p>
-        <h2>Projets principaux</h2>
-        <p>Des projets simples à comprendre, mais suffisamment complets pour montrer mes compétences techniques.</p>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card glass featured reveal">
-          <div class="project-header">
-            <span class="project-index">01</span>
-            <span class="project-category">Full Stack • API REST • JWT</span>
-          </div>
-          <h3>Telco Connect B2B</h3>
-          <p>Plateforme web simulant l’écosystème digital d’une entreprise télécom B2B : catalogue, extranet, commandes, tickets et dashboard.</p>
-          <ul>
-            <li>Authentification JWT avec rôles Admin / Client</li>
-            <li>Catalogue d’offres et création de commandes</li>
-            <li>Gestion de tickets support</li>
-            <li>Simulation d’intégration CRM / ERP</li>
-          </ul>
-          <div class="tech-list">
-            <span>React</span><span>Node.js</span><span>Express</span><span>JWT</span><span>REST API</span><span>CSS</span>
-          </div>
-          <a class="project-link" href="https://github.com/Hamza-dev-max/telco-connect-b2b" target="_blank">Voir sur GitHub →</a>
-        </article>
-
-        <article class="project-card glass reveal">
-          <div class="project-header">
-            <span class="project-index">02</span>
-            <span class="project-category">Machine Learning • NLP</span>
-          </div>
-          <h3>Spam Shield ML</h3>
-          <p>Projet Machine Learning permettant de classifier automatiquement des messages en spam ou non-spam.</p>
-          <ul>
-            <li>Nettoyage et préparation des messages</li>
-            <li>Vectorisation TF-IDF</li>
-            <li>Classification avec Scikit-learn</li>
-            <li>Interface Streamlit</li>
-          </ul>
-          <div class="tech-list">
-            <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>TF-IDF</span><span>NLP</span><span>Streamlit</span>
-          </div>
-          <a class="project-link" href="https://github.com/Hamza-dev-max/spam-shield-ml" target="_blank">Voir sur GitHub →</a>
-        </article>
-
-        <article class="project-card glass reveal">
-          <div class="project-header">
-            <span class="project-index">03</span>
-            <span class="project-category">Django • Machine Learning</span>
-          </div>
-          <h3>AgriConnect</h3>
-          <p>Application de recommandation agricole proposant une culture adaptée selon les paramètres du sol et le climat.</p>
-          <ul>
-            <li>Prédiction de culture avec modèle ML</li>
-            <li>Historique des prédictions</li>
-            <li>Graphiques d’analyse</li>
-            <li>Météo automatique via API</li>
-          </ul>
-          <div class="tech-list">
-            <span>Python</span><span>Django</span><span>Scikit-learn</span><span>SQLite</span><span>API météo</span>
-          </div>
-          <a class="project-link" href="https://github.com/Hamza-dev-max/agriconnect" target="_blank">Voir sur GitHub →</a>
-        </article>
-
-        <article class="project-card glass reveal">
-          <div class="project-header">
-            <span class="project-index">04</span>
-            <span class="project-category">Full Stack • Gestion de tâches</span>
-          </div>
-          <h3>TaskFlow</h3>
-          <p>Application full stack de gestion de tâches avec statuts, priorités, filtres, recherche et tableau de bord.</p>
-          <ul>
-            <li>Création, modification et suppression de tâches</li>
-            <li>Suivi des statuts et priorités</li>
-            <li>Architecture frontend/backend</li>
-            <li>API REST</li>
-          </ul>
-          <div class="tech-list">
-            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>MySQL</span>
-          </div>
-          <a class="project-link" href="https://github.com/Hamza-dev-max/taskflow" target="_blank">Voir sur GitHub →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="container section" id="skills">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Compétences</p>
-        <h2>Compétences techniques</h2>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-card glass reveal"><h3>Langages</h3><p>Java, Python, C, C++, JavaScript, TypeScript, PHP</p></article>
-        <article class="skill-card glass reveal"><h3>Frontend</h3><p>React, Angular, HTML5, CSS3, interfaces responsive</p></article>
-        <article class="skill-card glass reveal"><h3>Backend</h3><p>Node.js, Express.js, Spring Boot, Django, API REST, JWT</p></article>
-        <article class="skill-card glass reveal"><h3>Bases de données</h3><p>SQL, MySQL, PostgreSQL, SQLite, requêtes CRUD</p></article>
-        <article class="skill-card glass reveal"><h3>Machine Learning</h3><p>Scikit-learn, Pandas, NumPy, classification, NLP, TF-IDF</p></article>
-        <article class="skill-card glass reveal"><h3>Cybersécurité</h3><p>OWASP Top 10, sécurité web, JWT, TCP/IP</p></article>
-        <article class="skill-card glass reveal"><h3>Outils</h3><p>Git, GitHub, VS Code, Maven, npm, Linux, Postman</p></article>
-        <article class="skill-card glass reveal"><h3>Soft skills</h3><p>Autonomie, sérieux, communication, travail en équipe</p></article>
-      </div>
-    </section>
-
-    <section class="container section" id="certifications">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Certifications</p>
-        <h2>Certifications et formations complémentaires</h2>
-      </div>
-
-      <div class="certifications-grid">
-        <article class="cert-card glass reveal"><span>IBM</span><h3>Python for Data Science, AI & Development</h3><p>Python, data science et bases IA.</p></article>
-        <article class="cert-card glass reveal"><span>University of Michigan</span><h3>Interactivity with JavaScript</h3><p>DOM, événements JavaScript et interactions web.</p></article>
-        <article class="cert-card glass reveal"><span>HKUST</span><h3>Software Design and Project Management</h3><p>Conception logicielle et gestion de projet.</p></article>
-        <article class="cert-card glass reveal"><span>EPFL</span><h3>Programmation orientée objet en C++</h3><p>POO, classes, objets et bases C++.</p></article>
-        <article class="cert-card glass reveal"><span>Johns Hopkins University</span><h3>The Unix Workbench</h3><p>Ligne de commande et environnement Unix.</p></article>
-        <article class="cert-card glass reveal"><span>Coursera</span><h3>HTML, CSS and JavaScript for Web Developers</h3><p>Développement web frontend.</p></article>
-      </div>
-    </section>
-
-    <section class="container section contact-section" id="contact">
-      <div class="contact-card glass reveal">
+    <article class="exp-card glass reveal">
+      <div class="exp-header">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Disponible pour échanger sur une alternance.</h2>
-          <p>Je suis ouvert aux opportunités en développement logiciel, développement web full stack, API REST et cybersécurité applicative.</p>
+          <div class="exp-date">2021 — 2022</div>
+          <h3>Tuteur académique — Institut Al Najah</h3>
         </div>
-
-        <div class="contact-links">
-          <a href="mailto:marzaqhamza1@gmail.com">marzaqhamza1@gmail.com</a>
-          <a href="tel:+33762460640">07 62 46 06 40</a>
-          <a href="https://github.com/Hamza-dev-max" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/hamza-marzaq" target="_blank">LinkedIn</a>
-        </div>
+        <span class="exp-badge tutorat">Tutorat</span>
       </div>
-    </section>
-  </main>
+      <p>Encadrement d'étudiants en informatique et mathématiques. Développement de compétences pédagogiques et de communication technique.</p>
+      <ul>
+        <li>Cours particuliers en JavaScript, C++ et algorithmique</li>
+        <li>Explication de la programmation orientée objet</li>
+        <li>Communication de concepts complexes de façon accessible</li>
+        <li>Suivi individuel et progression des étudiants</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-  <footer class="footer container">
-    <p>© 2026 Hamza Marzaq — Portfolio personnel</p>
-  </footer>
+<section class="container section" id="projets">
+  <div class="section-header reveal">
+    <p class="eyebrow">Projets</p>
+    <h2 class="section-title">Projets principaux</h2>
+    <p class="section-subtitle">Réalistes, documentés, et conçus pour démontrer des compétences concrètes.</p>
+  </div>
 
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
-    const navItems = document.querySelectorAll(".nav-links a");
+  <div class="projects-grid">
+    <article class="project-card glass featured reveal">
+      <div class="project-top">
+        <span class="project-num">01</span>
+        <span class="project-cat">Full Stack · API REST · JWT</span>
+      </div>
+      <h3>Telco Connect B2B</h3>
+      <p>Plateforme web simulant l'écosystème digital d'une entreprise télécom B2B : catalogue d'offres, extranet client, gestion de commandes et de tickets support.</p>
+      <ul>
+        <li>Authentification JWT avec rôles Admin / Client</li>
+        <li>Catalogue d'offres et création de commandes</li>
+        <li>Gestion de tickets support</li>
+        <li>Simulation d'intégration CRM / ERP</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express</span>
+        <span class="tech-tag">JWT</span>
+        <span class="tech-tag">REST API</span>
+        <span class="tech-tag">CSS</span>
+      </div>
+      <a class="project-link" href="https://github.com/Hamza-dev-max/telco-connect-b2b" target="_blank">Voir sur GitHub →</a>
+    </article>
 
-    menuButton.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">02</span>
+        <span class="project-cat">Machine Learning · NLP</span>
+      </div>
+      <h3>Spam Shield ML</h3>
+      <p>Classificateur automatique de messages spam avec interface utilisateur Streamlit. Pipeline ML complet de la donnée brute au modèle.</p>
+      <ul>
+        <li>Nettoyage et prétraitement des messages texte</li>
+        <li>Vectorisation TF-IDF</li>
+        <li>Classification avec Scikit-learn</li>
+        <li>Interface interactive Streamlit</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">TF-IDF</span>
+        <span class="tech-tag">NLP</span>
+        <span class="tech-tag">Streamlit</span>
+      </div>
+      <a class="project-link" href="https://github.com/Hamza-dev-max/spam-shield-ml" target="_blank">Voir sur GitHub →</a>
+    </article>
+
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">03</span>
+        <span class="project-cat">Django · Machine Learning</span>
+      </div>
+      <h3>AgriConnect</h3>
+      <p>Application de recommandation agricole : propose la culture la plus adaptée selon les paramètres du sol et les données météo.</p>
+      <ul>
+        <li>Prédiction de culture via modèle ML entraîné</li>
+        <li>Intégration API météo</li>
+        <li>Historique des prédictions avec graphiques</li>
+        <li>Authentification et interface Django</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Django</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">SQLite</span>
+        <span class="tech-tag">API météo</span>
+      </div>
+      <a class="project-link" href="https://github.com/Hamza-dev-max/agriconnect" target="_blank">Voir sur GitHub →</a>
+    </article>
+
+    <article class="project-card glass reveal">
+      <div class="project-top">
+        <span class="project-num">04</span>
+        <span class="project-cat">Full Stack · Java</span>
+      </div>
+      <h3>TaskFlow</h3>
+      <p>Application full stack de gestion de tâches avec statuts, priorités, filtres, recherche et tableau de bord.</p>
+      <ul>
+        <li>CRUD complet sur les tâches</li>
+        <li>API REST Java / Spring Boot</li>
+        <li>Frontend Angular avec TypeScript</li>
+        <li>Base de données MySQL</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Angular</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">MySQL</span>
+      </div>
+      <a class="project-link" href="https://github.com/Hamza-dev-max/taskflow" target="_blank">Voir sur GitHub →</a>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="competences">
+  <div class="section-header reveal">
+    <p class="eyebrow">Compétences</p>
+    <h2 class="section-title">Stack technique</h2>
+  </div>
+
+  <div class="skills-grid">
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">⌨️</div>
+      <h4>Langages</h4>
+      <div class="skill-items">
+        <span class="skill-item">Java · Python · JavaScript</span>
+        <span class="skill-item">TypeScript · C · C++ · PHP</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🎨</div>
+      <h4>Frontend</h4>
+      <div class="skill-items">
+        <span class="skill-item">React · Angular</span>
+        <span class="skill-item">HTML5 · CSS3 · Responsive</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">⚙️</div>
+      <h4>Backend</h4>
+      <div class="skill-items">
+        <span class="skill-item">Node.js · Express</span>
+        <span class="skill-item">Spring Boot · Django</span>
+        <span class="skill-item">API REST · JWT</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🗄️</div>
+      <h4>Bases de données</h4>
+      <div class="skill-items">
+        <span class="skill-item">MySQL · PostgreSQL</span>
+        <span class="skill-item">SQLite · CRUD · SQL</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🤖</div>
+      <h4>Machine Learning</h4>
+      <div class="skill-items">
+        <span class="skill-item">Scikit-learn · Pandas</span>
+        <span class="skill-item">NumPy · NLP · TF-IDF</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🔐</div>
+      <h4>Cybersécurité</h4>
+      <div class="skill-items">
+        <span class="skill-item">OWASP Top 10</span>
+        <span class="skill-item">JWT · Sécurité API · TCP/IP</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🛠️</div>
+      <h4>Outils & DevOps</h4>
+      <div class="skill-items">
+        <span class="skill-item">Git · GitHub · Postman</span>
+        <span class="skill-item">VS Code · Maven · Linux</span>
+      </div>
+    </article>
+    <article class="skill-card glass reveal">
+      <div class="skill-icon">🤝</div>
+      <h4>Soft Skills</h4>
+      <div class="skill-items">
+        <span class="skill-item">Autonomie · Rigueur</span>
+        <span class="skill-item">Communication · Équipe</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="certifications">
+  <div class="section-header reveal">
+    <p class="eyebrow">Certifications</p>
+    <h2 class="section-title">Formations complémentaires</h2>
+    <p class="section-subtitle">Certifications obtenues sur des plateformes reconnues, validant des compétences pratiques.</p>
+  </div>
+
+  <div class="certs-grid">
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">IBM</div>
+      <h4>Python for Data Science, AI & Development</h4>
+      <p>Python appliqué à la data science et à l'intelligence artificielle.</p>
+    </article>
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">University of Michigan</div>
+      <h4>Interactivity with JavaScript</h4>
+      <p>DOM, événements et interactions web dynamiques.</p>
+    </article>
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">HKUST</div>
+      <h4>Software Design and Project Management</h4>
+      <p>Conception logicielle, patterns et gestion de projet.</p>
+    </article>
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">EPFL</div>
+      <h4>Programmation orientée objet en C++</h4>
+      <p>Classes, héritage, polymorphisme et bonnes pratiques C++.</p>
+    </article>
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">Johns Hopkins University</div>
+      <h4>The Unix Workbench</h4>
+      <p>Environnement Unix, ligne de commande et scripts shell.</p>
+    </article>
+    <article class="cert-card glass reveal">
+      <div class="cert-issuer">Coursera</div>
+      <h4>HTML, CSS and JavaScript for Web Developers</h4>
+      <p>Développement web frontend complet et bonnes pratiques.</p>
+    </article>
+  </div>
+</section>
+
+<section class="container section" id="contact">
+  <div class="contact-card glass reveal">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Parlons de votre<br><em>prochain projet</em></h2>
+      <p>
+        Je suis disponible pour une alternance à partir de juin 2026, en développement logiciel,
+        web full stack, API REST ou cybersécurité applicative. N'hésitez pas à me contacter directement.
+      </p>
+    </div>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:marzaqhamza1@gmail.com">
+        <div class="contact-link-icon">✉️</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">Email</span>
+          <span>marzaqhamza1@gmail.com</span>
+        </div>
+      </a>
+      <a class="contact-link" href="tel:+33762460640">
+        <div class="contact-link-icon">📱</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">Téléphone</span>
+          <span>07 62 46 06 40</span>
+        </div>
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/hamza-marzaq" target="_blank">
+        <div class="contact-link-icon">💼</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>linkedin.com/in/hamza-marzaq</span>
+        </div>
+      </a>
+      <a class="contact-link" href="https://github.com/Hamza-dev-max" target="_blank">
+        <div class="contact-link-icon">🐙</div>
+        <div class="contact-link-info">
+          <span class="contact-link-label">GitHub</span>
+          <span>github.com/Hamza-dev-max</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer container">
+  <p>© 2026 <a href="https://github.com/Hamza-dev-max" target="_blank">Hamza Marzaq</a> — Portfolio personnel · Grenoble, France</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
     });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
 
-    navItems.forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
     });
-
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealElements.forEach((element) => observer.observe(element));
-  </script>
+    navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+    });
+  }, { passive: true });
+</script>
 </body>
 </html>
