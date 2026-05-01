@@ -1,60 +1,57 @@
 # Portfolio — Hamza Marzaq
 
-Portfolio personnel de **Hamza Marzaq**, étudiant en Licence 3 Informatique et candidat à une alternance à partir de **juin 2026**.
+Portfolio personnel professionnel réalisé en **HTML**, **CSS** et **JavaScript**.
 
-Ce site présente mon profil, mes compétences techniques, mon expérience, mes projets GitHub et mes certifications.
+## Objectif
 
-## Objectif du portfolio
+Ce portfolio présente le profil de Hamza Marzaq pour une recherche d’alternance en développement logiciel, développement web full stack ou cybersécurité à partir de septembre 2026.
 
-Présenter de manière claire et professionnelle mon parcours en développement logiciel, développement web et cybersécurité.
+## Sections du portfolio
 
-## Contenu du site
-
-- Présentation personnelle
-- Expérience professionnelle
-- Tutorat académique en informatique
-- Projets techniques :
-  - AgriConnect
-  - TaskFlow
+- Hero section avec objectif professionnel
+- Profil
+- Formation académique
+- Expériences professionnelles
+- Projets principaux
 - Compétences techniques
-- Certifications Coursera
-- Informations de contact
+- Certifications
+- Contact
 
-## Technologies utilisées
+## Projets mis en avant
 
-- HTML
-- CSS
+- Telco Connect B2B — plateforme full stack télécom
+- Spam Shield ML — classification de messages spam avec Machine Learning
+- AgriConnect — recommandation agricole avec Machine Learning
+- TaskFlow — application full stack de gestion de tâches
+
+## Technologies
+
+- HTML5
+- CSS3
 - JavaScript
-- Git
-- GitHub Pages
+- Design responsive
+- Animations légères au scroll
 
-## Projets présentés
+## Lancer en local
 
-### AgriConnect
+Ouvrir directement le fichier :
 
-Application web Django de recommandation agricole utilisant un modèle de Machine Learning.
+```txt
+index.html
+```
 
-Lien GitHub :  
-https://github.com/Hamza-dev-max/agriconnect
+Ou utiliser Live Server dans VS Code.
 
-### TaskFlow
+## Déploiement GitHub Pages
 
-Application fullstack de gestion de tâches avec frontend Angular et backend Java Spring Boot.
-
-Lien GitHub :  
-https://github.com/Hamza-dev-max/taskflow
-
-## Portfolio en ligne
-
-https://hamza-dev-max.github.io/portfolio/
-
-## Contact
-
-- Email : marzaqhamza1@gmail.com
-- Téléphone : 07 62 46 06 40
-- LinkedIn : https://www.linkedin.com/in/hamza-marzaq
-- GitHub : https://github.com/Hamza-dev-max
+1. Créer un repository GitHub
+2. Ajouter `index.html`, `style.css`, `script.js` et `README.md`
+3. Aller dans `Settings > Pages`
+4. Choisir `Deploy from branch`
+5. Sélectionner la branche `main` et le dossier `/root`
 
 ## Auteur
 
-**Hamza Marzaq**
+Hamza Marzaq  
+GitHub : https://github.com/Hamza-dev-max  
+LinkedIn : https://www.linkedin.com/in/hamza-marzaq
