@@ -4,19 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Hamza Marzaq — Portfolio Full Stack</title>
+  <title>Portfolio — Hamza Marzaq | Développeur Full Stack</title>
 
-  <meta
-    name="description"
-    content="Portfolio de Hamza Marzaq — Développeur Full Stack, Machine Learning et cybersécurité. Disponible pour une alternance à partir de septembre 2026."
-  />
+  <meta name="description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
+  <meta name="author" content="Hamza Marzaq" />
 
-  <!-- LinkedIn / Open Graph Preview -->
+  <!-- LinkedIn / Open Graph -->
   <meta property="og:title" content="Portfolio — Hamza Marzaq | Développeur Full Stack" />
   <meta property="og:description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
   <meta property="og:image" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
+  <meta property="og:image:secure_url" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://hamza-dev-max.github.io/portfolio/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter / X Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio — Hamza Marzaq | Développeur Full Stack" />
+  <meta name="twitter:description" content="Portfolio personnel présentant mes projets full stack, Machine Learning et cybersécurité." />
+  <meta name="twitter:image" content="https://hamza-dev-max.github.io/portfolio/portfolio-preview.png" />
 
   <style>
     * {
@@ -26,7 +34,6 @@
     :root {
       --bg: #050816;
       --surface: rgba(255, 255, 255, 0.075);
-      --surface-strong: rgba(255, 255, 255, 0.12);
       --border: rgba(255, 255, 255, 0.14);
       --text: #f8fafc;
       --muted: #a7b4ca;
@@ -383,13 +390,29 @@
       font-size: 17px;
     }
 
-    .profile-layout {
+    .profile-layout,
+    .experience-grid,
+    .projects-grid {
       display: grid;
-      grid-template-columns: 1.45fr 0.75fr;
-      gap: 18px;
+      gap: 20px;
     }
 
-    .card {
+    .profile-layout {
+      grid-template-columns: 1.45fr 0.75fr;
+    }
+
+    .experience-grid,
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card,
+    .timeline-card,
+    .experience-card,
+    .project-card,
+    .skill-card,
+    .cert-card,
+    .contact-card {
       border-radius: 28px;
       padding: 28px;
     }
@@ -448,11 +471,6 @@
       box-shadow: 0 0 0 8px rgba(94, 234, 212, 0.12);
     }
 
-    .timeline-card {
-      padding: 26px;
-      border-radius: 28px;
-    }
-
     .timeline-card span,
     .card-top span,
     .cert-card span {
@@ -463,17 +481,6 @@
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .experience-card {
-      padding: 28px;
-      border-radius: 30px;
     }
 
     .card-top {
@@ -498,12 +505,6 @@
       padding-left: 18px;
       color: #d8e1ef;
       line-height: 1.85;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
     }
 
     .project-card {
@@ -563,25 +564,6 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-    }
-
-    .skill-card,
-    .cert-card {
-      padding: 24px;
-      border-radius: 28px;
-    }
-
-    .skill-card h3,
-    .cert-card h3 {
-      font-size: 21px;
-    }
-
-    .cert-card span {
-      margin-bottom: 12px;
-    }
-
-    .contact-section {
-      padding-bottom: 42px;
     }
 
     .contact-card {
@@ -644,10 +626,6 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
       .skills-grid,
       .certifications-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -673,10 +651,6 @@
 
       .nav-links.open {
         display: flex;
-      }
-
-      .nav-links a {
-        padding: 13px 14px;
       }
 
       .projects-grid,
@@ -855,10 +829,7 @@
           <div class="timeline-card glass">
             <span>2025 — présent</span>
             <h3>Licence 3 Informatique — Université Grenoble Alpes</h3>
-            <p>
-              Programmation, algorithmique, bases de données, systèmes, réseaux, développement logiciel
-              et conception d’applications.
-            </p>
+            <p>Programmation, algorithmique, bases de données, systèmes, réseaux et développement logiciel.</p>
           </div>
         </article>
 
@@ -867,10 +838,7 @@
           <div class="timeline-card glass">
             <span>2024 — 2025</span>
             <h3>Cycle d’ingénierie Informatique — EMSI Rabat</h3>
-            <p>
-              Développement logiciel, projets web, bases de données, programmation orientée objet
-              et initiation aux architectures applicatives.
-            </p>
+            <p>Développement logiciel, projets web, bases de données et programmation orientée objet.</p>
           </div>
         </article>
 
@@ -879,9 +847,7 @@
           <div class="timeline-card glass">
             <span>2022 — 2024</span>
             <h3>Cycle préparatoire Informatique — EMSI Rabat</h3>
-            <p>
-              Bases solides en mathématiques, algorithmique, programmation, logique et résolution de problèmes.
-            </p>
+            <p>Bases solides en mathématiques, algorithmique, programmation et résolution de problèmes.</p>
           </div>
         </article>
       </div>
@@ -900,14 +866,11 @@
             <strong>Stage</strong>
           </div>
           <h3>Stagiaire Développeur Logiciel — Atlantis</h3>
-          <p>
-            Participation au développement backend en Java/Spring Boot, correction de bugs,
-            utilisation de Git/GitHub et collaboration dans un environnement Agile.
-          </p>
+          <p>Participation au développement backend en Java/Spring Boot, correction de bugs et utilisation de Git/GitHub.</p>
           <ul>
             <li>Développement de fonctionnalités backend</li>
             <li>Correction de bugs et amélioration de la stabilité</li>
-            <li>Participation aux échanges techniques et revues de code</li>
+            <li>Participation aux échanges techniques</li>
           </ul>
         </article>
 
@@ -917,14 +880,11 @@
             <strong>Tutorat</strong>
           </div>
           <h3>Tuteur académique en informatique — Institut Al Najah</h3>
-          <p>
-            Encadrement d’étudiants en programmation, mathématiques appliquées et logique de résolution
-            de problèmes.
-          </p>
+          <p>Encadrement d’étudiants en programmation, mathématiques appliquées et logique de résolution de problèmes.</p>
           <ul>
             <li>Accompagnement en JavaScript, C++ et algorithmique</li>
             <li>Explication de concepts de programmation orientée objet</li>
-            <li>Développement de compétences en communication technique</li>
+            <li>Communication technique avec des étudiants</li>
           </ul>
         </article>
       </div>
@@ -934,9 +894,7 @@
       <div class="section-heading reveal">
         <p class="eyebrow">Projets</p>
         <h2>Projets principaux</h2>
-        <p>
-          Des projets simples à comprendre, mais suffisamment complets pour montrer mes compétences techniques.
-        </p>
+        <p>Des projets simples à comprendre, mais suffisamment complets pour montrer mes compétences techniques.</p>
       </div>
 
       <div class="projects-grid">
@@ -946,23 +904,15 @@
             <span class="project-category">Full Stack • API REST • JWT</span>
           </div>
           <h3>Telco Connect B2B</h3>
-          <p>
-            Plateforme web simulant l’écosystème digital d’une entreprise télécom B2B :
-            catalogue d’offres, extranet client, commandes, tickets support et dashboard administrateur.
-          </p>
+          <p>Plateforme web simulant l’écosystème digital d’une entreprise télécom B2B : catalogue, extranet, commandes, tickets et dashboard.</p>
           <ul>
             <li>Authentification JWT avec rôles Admin / Client</li>
             <li>Catalogue d’offres et création de commandes</li>
             <li>Gestion de tickets support</li>
-            <li>Simulation d’intégration CRM / ERP via webhook</li>
+            <li>Simulation d’intégration CRM / ERP</li>
           </ul>
           <div class="tech-list">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>JWT</span>
-            <span>REST API</span>
-            <span>CSS</span>
+            <span>React</span><span>Node.js</span><span>Express</span><span>JWT</span><span>REST API</span><span>CSS</span>
           </div>
           <a class="project-link" href="https://github.com/Hamza-dev-max/telco-connect-b2b" target="_blank">Voir sur GitHub →</a>
         </article>
@@ -973,22 +923,15 @@
             <span class="project-category">Machine Learning • NLP</span>
           </div>
           <h3>Spam Shield ML</h3>
-          <p>
-            Projet Machine Learning permettant de classifier automatiquement des messages en spam ou non-spam.
-          </p>
+          <p>Projet Machine Learning permettant de classifier automatiquement des messages en spam ou non-spam.</p>
           <ul>
             <li>Nettoyage et préparation des messages</li>
             <li>Vectorisation TF-IDF</li>
             <li>Classification avec Scikit-learn</li>
-            <li>Interface Streamlit pour tester un message</li>
+            <li>Interface Streamlit</li>
           </ul>
           <div class="tech-list">
-            <span>Python</span>
-            <span>Scikit-learn</span>
-            <span>Pandas</span>
-            <span>TF-IDF</span>
-            <span>NLP</span>
-            <span>Streamlit</span>
+            <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>TF-IDF</span><span>NLP</span><span>Streamlit</span>
           </div>
           <a class="project-link" href="https://github.com/Hamza-dev-max/spam-shield-ml" target="_blank">Voir sur GitHub →</a>
         </article>
@@ -999,22 +942,15 @@
             <span class="project-category">Django • Machine Learning</span>
           </div>
           <h3>AgriConnect</h3>
-          <p>
-            Application de recommandation agricole proposant une culture adaptée selon les paramètres du sol
-            et les conditions climatiques.
-          </p>
+          <p>Application de recommandation agricole proposant une culture adaptée selon les paramètres du sol et le climat.</p>
           <ul>
             <li>Prédiction de culture avec modèle ML</li>
             <li>Historique des prédictions</li>
-            <li>Graphiques d’analyse des données</li>
+            <li>Graphiques d’analyse</li>
             <li>Météo automatique via API</li>
           </ul>
           <div class="tech-list">
-            <span>Python</span>
-            <span>Django</span>
-            <span>Scikit-learn</span>
-            <span>SQLite</span>
-            <span>API météo</span>
+            <span>Python</span><span>Django</span><span>Scikit-learn</span><span>SQLite</span><span>API météo</span>
           </div>
           <a class="project-link" href="https://github.com/Hamza-dev-max/agriconnect" target="_blank">Voir sur GitHub →</a>
         </article>
@@ -1025,22 +961,15 @@
             <span class="project-category">Full Stack • Gestion de tâches</span>
           </div>
           <h3>TaskFlow</h3>
-          <p>
-            Application full stack de gestion de tâches avec statuts, priorités, filtres, recherche
-            et tableau de bord.
-          </p>
+          <p>Application full stack de gestion de tâches avec statuts, priorités, filtres, recherche et tableau de bord.</p>
           <ul>
             <li>Création, modification et suppression de tâches</li>
             <li>Suivi des statuts et priorités</li>
             <li>Architecture frontend/backend</li>
-            <li>API REST pour la communication applicative</li>
+            <li>API REST</li>
           </ul>
           <div class="tech-list">
-            <span>Java</span>
-            <span>Spring Boot</span>
-            <span>Angular</span>
-            <span>TypeScript</span>
-            <span>MySQL</span>
+            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>MySQL</span>
           </div>
           <a class="project-link" href="https://github.com/Hamza-dev-max/taskflow" target="_blank">Voir sur GitHub →</a>
         </article>
@@ -1054,45 +983,14 @@
       </div>
 
       <div class="skills-grid">
-        <article class="skill-card glass reveal">
-          <h3>Langages</h3>
-          <p>Java, Python, C, C++, JavaScript, TypeScript, PHP</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Frontend</h3>
-          <p>React, Angular, HTML5, CSS3, interfaces responsive, composants UI</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Backend</h3>
-          <p>Node.js, Express.js, Spring Boot, Django, API REST, authentification JWT</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Bases de données</h3>
-          <p>SQL, MySQL, PostgreSQL, SQLite, modélisation simple, requêtes CRUD</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Machine Learning</h3>
-          <p>Scikit-learn, Pandas, NumPy, classification, NLP, TF-IDF, évaluation de modèle</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Cybersécurité</h3>
-          <p>OWASP Top 10, sécurité web, JWT, TCP/IP, bonnes pratiques applicatives</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Outils</h3>
-          <p>Git, GitHub, VS Code, Maven, npm, Linux, ligne de commande, Postman</p>
-        </article>
-
-        <article class="skill-card glass reveal">
-          <h3>Soft skills</h3>
-          <p>Autonomie, sérieux, communication, travail en équipe, résolution de problèmes</p>
-        </article>
+        <article class="skill-card glass reveal"><h3>Langages</h3><p>Java, Python, C, C++, JavaScript, TypeScript, PHP</p></article>
+        <article class="skill-card glass reveal"><h3>Frontend</h3><p>React, Angular, HTML5, CSS3, interfaces responsive</p></article>
+        <article class="skill-card glass reveal"><h3>Backend</h3><p>Node.js, Express.js, Spring Boot, Django, API REST, JWT</p></article>
+        <article class="skill-card glass reveal"><h3>Bases de données</h3><p>SQL, MySQL, PostgreSQL, SQLite, requêtes CRUD</p></article>
+        <article class="skill-card glass reveal"><h3>Machine Learning</h3><p>Scikit-learn, Pandas, NumPy, classification, NLP, TF-IDF</p></article>
+        <article class="skill-card glass reveal"><h3>Cybersécurité</h3><p>OWASP Top 10, sécurité web, JWT, TCP/IP</p></article>
+        <article class="skill-card glass reveal"><h3>Outils</h3><p>Git, GitHub, VS Code, Maven, npm, Linux, Postman</p></article>
+        <article class="skill-card glass reveal"><h3>Soft skills</h3><p>Autonomie, sérieux, communication, travail en équipe</p></article>
       </div>
     </section>
 
@@ -1103,41 +1001,12 @@
       </div>
 
       <div class="certifications-grid">
-        <article class="cert-card glass reveal">
-          <span>IBM</span>
-          <h3>Python for Data Science, AI & Development</h3>
-          <p>Python, data science, intelligence artificielle et bases du développement orienté données.</p>
-        </article>
-
-        <article class="cert-card glass reveal">
-          <span>University of Michigan</span>
-          <h3>Interactivity with JavaScript</h3>
-          <p>Manipulation du DOM, événements JavaScript et interactions web.</p>
-        </article>
-
-        <article class="cert-card glass reveal">
-          <span>HKUST</span>
-          <h3>Software Design and Project Management</h3>
-          <p>Conception logicielle, structuration d’un projet et bonnes pratiques de gestion.</p>
-        </article>
-
-        <article class="cert-card glass reveal">
-          <span>EPFL</span>
-          <h3>Programmation orientée objet en C++</h3>
-          <p>Concepts de POO, classes, objets, encapsulation et bases C++.</p>
-        </article>
-
-        <article class="cert-card glass reveal">
-          <span>Johns Hopkins University</span>
-          <h3>The Unix Workbench</h3>
-          <p>Ligne de commande, environnement Unix, fichiers et outils développeur.</p>
-        </article>
-
-        <article class="cert-card glass reveal">
-          <span>Coursera</span>
-          <h3>HTML, CSS and JavaScript for Web Developers</h3>
-          <p>Développement web, structure HTML, style CSS et interactions JavaScript.</p>
-        </article>
+        <article class="cert-card glass reveal"><span>IBM</span><h3>Python for Data Science, AI & Development</h3><p>Python, data science et bases IA.</p></article>
+        <article class="cert-card glass reveal"><span>University of Michigan</span><h3>Interactivity with JavaScript</h3><p>DOM, événements JavaScript et interactions web.</p></article>
+        <article class="cert-card glass reveal"><span>HKUST</span><h3>Software Design and Project Management</h3><p>Conception logicielle et gestion de projet.</p></article>
+        <article class="cert-card glass reveal"><span>EPFL</span><h3>Programmation orientée objet en C++</h3><p>POO, classes, objets et bases C++.</p></article>
+        <article class="cert-card glass reveal"><span>Johns Hopkins University</span><h3>The Unix Workbench</h3><p>Ligne de commande et environnement Unix.</p></article>
+        <article class="cert-card glass reveal"><span>Coursera</span><h3>HTML, CSS and JavaScript for Web Developers</h3><p>Développement web frontend.</p></article>
       </div>
     </section>
 
@@ -1146,10 +1015,7 @@
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Disponible pour échanger sur une alternance.</h2>
-          <p>
-            Je suis ouvert aux opportunités en développement logiciel, développement web full stack,
-            outils internes, API REST et cybersécurité applicative.
-          </p>
+          <p>Je suis ouvert aux opportunités en développement logiciel, développement web full stack, API REST et cybersécurité applicative.</p>
         </div>
 
         <div class="contact-links">
@@ -1191,9 +1057,7 @@
           }
         });
       },
-      {
-        threshold: 0.12,
-      }
+      { threshold: 0.12 }
     );
 
     revealElements.forEach((element) => observer.observe(element));
